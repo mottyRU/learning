@@ -1,0 +1,56 @@
+using System;
+using System.Windows.Forms;
+using Microsoft.VisualBasic;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Самостоятельные_задания_Глава_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MessageBoxIcon icon;
+            int number;
+            string text, title, input;
+
+            input = Interaction.InputBox("Enter number:");
+            if (input == "")
+            {
+                number = 5;
+            }
+            else
+            {
+                number = Int32.Parse(input);                       
+            }
+            switch (number)
+            {
+                case 1:
+                    text = "One";
+                    title = "Window 1";
+                    break;
+                case 2:
+                    text = "Two";
+                    title = "Window 2";
+                    break;
+                case 3:
+                    text = "Three";
+                    title = "Window 3";
+                    break;
+                case 4:
+                    text = "Four";
+                    title = "Window 4";
+                    break;
+                default:
+                    text = "Unknown number!";
+                    title = "Error";
+                    icon = MessageBoxIcon.Error;
+                    break;
+            }
+            icon = MessageBoxIcon.Asterisk;
+            MessageBox.Show(text, title, MessageBoxButtons.OK, icon);      
+        }
+    }
+}
