@@ -36,8 +36,8 @@ namespace Глава_3_задача_5_
                     break;               
 
             }
-            
-            Console.WriteLine(number);
+
+            Console.WriteLine(number == 0 ? "Error":""+number+"");
             Console.ReadKey();
         }
     }

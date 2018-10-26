@@ -15,15 +15,14 @@ namespace Vol3__ex3
             try
             {
                 int A, number;
-                A = 1;
                 number = 0;
-                while (A != 0)
+                
+                for (A=Int32.Parse(Interaction.InputBox("Enter number:")); A != 0; A = Int32.Parse(Interaction.InputBox("Enter number:")))
                 {
-                    A = Int32.Parse(Interaction.InputBox("Enter number:"));
                     number += A;
-                    MessageBox.Show("Result is:" + number + "");
+                    MessageBox.Show("Result is: "+number+"");
                 }
-                MessageBox.Show("Wrong number!");
+                MessageBox.Show("Wrong number");
             }
             catch
             {
