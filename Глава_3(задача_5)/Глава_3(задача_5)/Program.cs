@@ -14,7 +14,7 @@ namespace Глава_3_задача_5_
         {
             int number;
             string day;
-            number = 0;
+            
             Console.WriteLine("Enter day:");
             day = Console.ReadLine();
             switch(day)
@@ -32,7 +32,7 @@ namespace Глава_3_задача_5_
                     number = 4;
                     break;
                 default:
-                    day = "Error!";
+                    number = 0;                    
                     break;               
 
             }
