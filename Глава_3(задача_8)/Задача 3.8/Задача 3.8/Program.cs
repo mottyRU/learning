@@ -14,18 +14,19 @@ namespace Задача_3._8
         {
             int A, B, C, n;
             A = B = 1;
-            
+            C = 1;
             string step;
             Console.WriteLine("Enter step number:");
-            for (n = Int32.Parse(Console.ReadLine()); n == 0; --n)
-            {
-                
+            n = Int32.Parse(Console.ReadLine());
+            Console.Write("Result is: " + A + " " + B + "");
+            for (; n != 0; n--)
+            {                
                 C = A + B;
                 A = B;
                 B = C;
-                                                
+                Console.Write(" "+ C + " ");
             }
-            Console.WriteLine("Result is: " + A, B, C + "");
+            
             Console.ReadKey();
         }
     }
