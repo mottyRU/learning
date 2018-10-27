@@ -14,8 +14,8 @@ namespace Глава_3_задача_5_
         {
             int number;
             string day;
-            
-            Console.WriteLine("Enter day:");
+            number = 0;
+            Console.WriteLine("Enter weekday:");
             day = Console.ReadLine();
             switch(day)
             {
@@ -28,16 +28,23 @@ namespace Глава_3_задача_5_
                 case "Wednesday":
                     number = 3;
                     break;
-                case "Thursday":
+                case "Thursday:":
                     number = 4;
                     break;
+                case "Friday":
+                    number = 5;
+                    break;
+                case "Saturday":
+                    number = 6;
+                    break;
+                case "Sunday":
+                    number = 7;
+                    break;
                 default:
-                    number = 0;                    
-                    break;               
-
+                    Console.WriteLine(number == 0?"Error!": "Day number is: "+number+"");
+                    break;                
             }
-
-            Console.WriteLine(number == 0 ? "Error":""+number+"");
+            Console.WriteLine("Day number is: "+number+"");
             Console.ReadKey();
         }
     }
