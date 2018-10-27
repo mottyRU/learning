@@ -45,7 +45,7 @@ namespace Задача_5_вариант_решения_2_
             {
                 number = 7;
             }
-            else if (day == "")
+            else
             {
                 Console.WriteLine("Error!");
             }
