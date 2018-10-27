@@ -19,14 +19,15 @@ namespace Задача_3._8
             Console.WriteLine("Enter step number:");
             n = Int32.Parse(Console.ReadLine());
             Console.Write("Result is: " + A + " " + B + "");
-            for (; n != 0; n--)
-            {                
+            while (n != 0)
+            {
+                
                 C = A + B;
                 A = B;
                 B = C;
                 Console.Write(" "+ C + " ");
-            }
-            
+                n--;
+            }           
             Console.ReadKey();
         }
     }
