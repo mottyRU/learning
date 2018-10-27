@@ -17,14 +17,15 @@ namespace Задача_3._8
             C = A + B;
             string step;
             Console.WriteLine("Enter step number:");
-            for (n = Int32.Parse(Console.ReadLine()); n == 0; n--)
+            for (n = Int32.Parse(Console.ReadLine()); n == 0; --n)
             {
-                A = B = 1;
-                C = A + B;
-                B = (A + B);
+                //A = B = 1;
+                //C = A + B;
+                B = C;
                 A = B;
-                Console.WriteLine("Result is: "+A, B, C+"");
+                
             }
+            Console.WriteLine("Result is: " + A, B, C + "");
             Console.ReadKey();
         }
     }
