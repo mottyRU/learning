@@ -12,11 +12,17 @@ namespace Задача_3._9
     {
         static void Main(string[] args)
         {
-            int A, B;
+            int A, B, C;
             Console.WriteLine("Enter A:");
             A = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter B:");
             B = Convert.ToInt32(Console.ReadLine());
+            if (A < B)
+            {
+                C = A;
+                A = B;                
+                B = C;
+            }
             for (; A > B; A--)
             {
                 Console.Write(" " + A + " ");
