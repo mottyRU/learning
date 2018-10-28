@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Vol3, ex3")]
+[assembly: AssemblyTitle("Задача 3.9")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Vol3, ex3")]
+[assembly: AssemblyProduct("Задача 3.9")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("4b89702e-96e8-4263-ab39-43bb1bc25ae9")]
+[assembly: Guid("aa4865a7-e341-4ca1-b7ee-7b3ab0c7c3e9")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //
