@@ -17,13 +17,14 @@ namespace Задача_3._10
             B = 0;
             Console.WriteLine("Enter n:");
             for (n = Int32.Parse(Console.ReadLine()); n != 0; n--)
-            {
-                A++;
-                //Console.WriteLine("" + A + "");
+            {           
+                
                 if ((A % 5==2)&(A % 3==1))
                 {
-                    B +=A;                    
+                    B +=A;
+                    Console.WriteLine("" + A + "");
                 }
+                A++;
             }
             Console.WriteLine("Sum:" + A + "");
             Console.ReadKey();
