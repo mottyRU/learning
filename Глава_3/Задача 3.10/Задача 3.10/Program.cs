@@ -14,7 +14,7 @@ namespace Задача_3._10
         {
             int n, A, B, C;
             A = 1;
-            
+            B = 0;
             Console.WriteLine("Enter n:");
             for (n = Int32.Parse(Console.ReadLine()); n != 0; n--)
             {
@@ -22,11 +22,10 @@ namespace Задача_3._10
                 //Console.WriteLine("" + A + "");
                 if ((A % 5==2)&(A % 3==1))
                 {
-                    A +=A;
-                    
+                    B +=A;                    
                 }
             }
-            Console.WriteLine("Summa:" + A + "");
+            Console.WriteLine("Sum:" + A + "");
             Console.ReadKey();
         }
     }
