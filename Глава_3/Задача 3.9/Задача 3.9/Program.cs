@@ -17,29 +17,9 @@ namespace Задача_3._9
             A = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter B:");
             B = Convert.ToInt32(Console.ReadLine());
-            if (A >= B)
+            for (; A > B; A--)
             {
-                if (A == B)
-                {
-                    Console.WriteLine("Error! A = B");
-                }
-                else
-                {
-                    while (A == B)
-                    {
-                        B = B++;
-                        Console.WriteLine("" + B + "");
-                    }
-                    Console.WriteLine("End of program.");
-                }                
-            }
-            else
-            {
-                do
-                {
-                    A++;
-                }
-                while (A == B);
+                Console.Write(" " + A + " ");
             }
             Console.ReadKey();
         }
