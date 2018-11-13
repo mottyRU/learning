@@ -17,7 +17,7 @@ namespace Самостоятельная_работа_3
             Console.WriteLine("Massive:");
             for (int i = 0; i<symb.Length; i++)
             {
-                symb[i] =(char) (i+1);
+                symb[i] =(int) symb[i]+1;
                 Console.WriteLine(""+symb[i]+"");
             }
             Console.ReadKey();
