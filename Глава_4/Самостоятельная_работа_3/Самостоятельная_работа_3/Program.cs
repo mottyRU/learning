@@ -15,12 +15,18 @@ namespace Самостоятельная_работа_3
             symb = new char[size];
             symb[0] = 'a';
             Console.WriteLine("Massive:");
-            for (int i = 0; i<symb.Length; i++)
+            Console.WriteLine(""+symb[0]+"");
+            for (int i = 1; i<symb.Length; i++)
             {
-                symb[i] = (char)((int) symb[i]+1);
+                symb[i] = (char) (symb[i-1]+2);
                 Console.WriteLine(""+symb[i]+"");
             }
-            Console.ReadKey();
+            Console.WriteLine("Invert Massive:");
+            for (int i = symb.Length-1; i >= 0; i--)
+            {
+                Console.WriteLine("" + symb[i]+ "");
+            }
+                Console.ReadKey();
         }
     }
 }
