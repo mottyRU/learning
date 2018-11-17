@@ -24,7 +24,15 @@ namespace Самостоятельная_работа_8
                 Console.WriteLine();
             }
             Console.WriteLine("New massive:");
-
+            for (int i = 0; i < numb.GetLength(0); i++)
+            {
+                for (int j = 0; j < numb.GetLength(1); j++)
+                {
+                    numb[i, j] = numb[j, i];
+                    Console.Write(numb[j, i] + "\t");
+                }
+                Console.WriteLine();
+            }
             Console.ReadKey();
         }
     }
