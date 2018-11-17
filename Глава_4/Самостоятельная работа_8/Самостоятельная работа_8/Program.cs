@@ -10,7 +10,7 @@ namespace Самостоятельная_работа_8
     {
         static void Main(string[] args)
         {
-            int rows=5, cols=5;
+            int rows=5, cols=5, A;
             int[,] numb = new int[rows, cols];
             Random rnd = new Random();
             Console.WriteLine("Random massive:");
@@ -28,8 +28,10 @@ namespace Самостоятельная_работа_8
             {
                 for (int j = 0; j < numb.GetLength(1); j++)
                 {
-                    numb[i, j] = numb[j, i];
-                    Console.Write(numb[j, i] + "\t");
+                    A = j;
+                    j = i;
+                    i = A;
+                    Console.Write(numb[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
