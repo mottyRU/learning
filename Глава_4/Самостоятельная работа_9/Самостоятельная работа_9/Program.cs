@@ -21,29 +21,29 @@ namespace Самостоятельная_работа_9
                 Console.WriteLine();
             }            
             Random rnd = new Random();
-            int row = rnd.Next(numb.GetLength(0)+1);
-            int col = rnd.Next(numb.GetLength(1)+1);
+            int row = rnd.Next(numb.GetLength(0));
+            int col = rnd.Next(numb.GetLength(1));
             Console.WriteLine("Delete {0} row and {1} col", row, col);
             Console.ReadKey();
             int A, B;
-            int[,] NewMassive = new int [numb.GetLength(0)+1, numb.GetLength(1)+1];
-            for (int i = 0; i<numb.GetLength(0); i++)
+            int[,] NewMassive = new int [numb.GetLength(0)-1, numb.GetLength(1)-1];
+            for (int i = 0; i<NewMassive.GetLength(0); i++)
             {
                 if (i < row) A = i;
                 else A = i+1;
-                for (int j = 0; j<numb.GetLength(1);i++)
+                for (int j = 0; j<NewMassive.GetLength(1); j++)
                 {
                     if (j < col) B = j;
                     else B = j+1;
-                    NewMassive[A, B] = numb[i, j];
+                    NewMassive[i, j] = numb[A, B];
                 }
             }
             Console.WriteLine("New Massive:");
-            for (int i = 0; i < numb.GetLength(0); i++)
+            for (int i = 0; i < NewMassive.GetLength(0); i++)
             {
-                for (int j = 0; j < numb.GetLength(1); j++)
+                for (int j = 0; j < NewMassive.GetLength(1); j++)
                 {
-                    Console.Write(numb[i, j] + "\t");
+                    Console.Write(NewMassive[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
