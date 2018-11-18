@@ -24,24 +24,23 @@ namespace Самостоятельная_работа_8
                 Console.WriteLine();
             }
             Console.WriteLine("New massive:");
-            for (int i = 0; i < numb.GetLength(0)/2; i++)
+            for (int i = 0; i < numb.GetLength(0); i++)
             {
-                for (int j = 0; j < numb.GetLength(1)/2; j++)
+                for (int j = i; j < numb.GetLength(1); j++)
                 {
                     A = numb[i, j];
                     numb[i, j] = numb[j, i];
                     numb[j, i] = A;
                 }
             }
-            for (int i = 0; i < numb.GetLength(0) / 2; i++)
+            for (int i = 0; i < numb.GetLength(0); i++)
             {
-                for (int j = 0; j < numb.GetLength(1) / 2; j++)
+                for (int j = 0; j < numb.GetLength(1); j++)
                 {
                     Console.Write(numb[i, j] + "\t");
                 }
                 Console.WriteLine();
             }
-            
             Console.ReadKey();
         }
     }
