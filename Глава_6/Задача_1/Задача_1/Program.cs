@@ -14,14 +14,13 @@ namespace Задача_1
         {
             number = n;
         }
-        public ref int Symbol()
+        public char Symbol()
         {
-            return ref number;
+            return (char)number;
         }
         public void SymbolAndNumber()
         {
-            Symbol();
-            Console.WriteLine(""+number+","+ (char) (number));
+            Console.WriteLine(""+number+","+ Symbol());
         }
     }
     class Program
