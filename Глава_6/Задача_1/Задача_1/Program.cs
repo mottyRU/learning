@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace Задача_1
 {
-    class Program
+    class MyClass
     {
         private int number;
         
-        public void Prisvoit()
+        public void Prisvoit(int n)
         {
-            Console.WriteLine("Enter number: ");
-            number = Int32.Parse(Console.ReadLine());
+            number = n;
         }
-        public void Symbol()
+        public ref int Symbol()
         {
-            
-            Console.WriteLine((char) ((int) number));
+            return ref number;
         }
         public void SymbolAndNumber()
         {
-            Console.WriteLine(""+number+","+ (char)((int)number));
+            Symbol();
+            Console.WriteLine(""+number+","+ (char) (number));
         }
     }
-    class MyClass
+    class Program
     {
         static void Main()
         {
-            Program B = new Program();
-            B.Prisvoit();
+            Console.WriteLine("Enter number: ");
+            MyClass B = new MyClass();
+            B.Prisvoit(Int32.Parse(Console.ReadLine()));
             B.Symbol();
             B.SymbolAndNumber();
             Console.ReadKey();
