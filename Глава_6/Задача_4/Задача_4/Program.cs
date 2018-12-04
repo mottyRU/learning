@@ -17,10 +17,10 @@ namespace Задача_4
         }
         public MyClass(double K)
         {
-            string Text;
-            Text = Convert.ToString(K);
-            Symbol = Text[0];
-            Number = Text[Text.Length-1];
+            string[] Text;
+            Text = Convert.ToString(K).Split((new Char[] {'.'}));
+            Symbol = Convert.ToChar(Text[0]);
+            Number = Convert.ToInt32(Text[1]);
             
         }
         public void Show()
@@ -34,7 +34,7 @@ namespace Задача_4
         {
             MyClass A = new MyClass('A', 55);
             A.Show();
-            MyClass B = new MyClass(65.12);
+            MyClass B = new MyClass(5.12);
             B.Show();
             Console.ReadKey();            
         }
