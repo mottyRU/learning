@@ -18,7 +18,10 @@ namespace Задача_4
         public MyClass(double K)
         {
             string[] Text;
-            Text = Convert.ToString(K).Split((new Char[] {'.'}));
+            Text = Convert.ToString(K).Split((new Char[] {'.', ','}));
+            Console.WriteLine(Text[0]);
+            Console.WriteLine(Text[1]);
+            Console.ReadKey();
             Symbol =(char) Convert.ToInt32(Text[0]);
             Number = Convert.ToInt32(Text[1]);
 
@@ -32,9 +35,10 @@ namespace Задача_4
     {
         static void Main(string[] args)
         {
+            Random rnd = new Random();
             MyClass A = new MyClass('A', 55);
             A.Show();
-            MyClass B = new MyClass(65.12);
+            MyClass B = new MyClass(2*rnd.NextDouble()+70);
             B.Show();
             Console.ReadKey();            
         }
