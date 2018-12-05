@@ -30,7 +30,7 @@ namespace Задача_4
             {
                 ProverkaZnakov = Text[1][0] + "";
             }
-            else (ProverkaZnakov == Text[1][0] + Text[1][1] + "");
+            else {ProverkaZnakov = Text[1][0] + Text[1][1] + " "};
             Console.ReadKey();
             Symbol =(char) Convert.ToInt32(Text[0]);
             Number = Convert.ToInt32(ProverkaZnakov);
