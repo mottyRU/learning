@@ -37,9 +37,8 @@ namespace Задача_6
         public void Prisvoit(int n, int m)
         {
             Console.WriteLine("n = {0}, m = {1}, Max = {2}, Min = {3}", n, m, Max, Min);
-            MyClass B = new MyClass(n, m);
-            B.Prisvoit(n);
-            B.Prisvoit(m);
+            Prisvoit(n);
+            Prisvoit(m);
         }
         public void Show()
         {
