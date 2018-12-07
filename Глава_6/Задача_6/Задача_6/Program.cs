@@ -16,7 +16,7 @@ namespace Задача_6
                 Max = n;
                 Min = m;
             }
-            else if (m > n)
+            else
             {
                 Max = m;
                 Min = n;
@@ -24,20 +24,22 @@ namespace Задача_6
         }
         public void Prisvoit(int n)
         {
-            int Hranitel;
             Console.WriteLine(""+n+", "+Max+", "+Min+"");
             if (n > Max)
             {
-                Hranitel = Max;
                 Max = n;
-                n = Hranitel;
             }
             else if (n < Min)
             {
-                Hranitel = Min;
                 Min = n;
-                n = Hranitel;
             }
+        }
+        public void Prisvoit(int n, int m)
+        {
+            Console.WriteLine("n = {0}, m = {1}, Max = {2}, Min = {3}", n, m, Max, Min);
+            MyClass B = new MyClass(n, m);
+            B.Prisvoit(n);
+            B.Prisvoit(m);
         }
         public void Show()
         {
@@ -51,6 +53,8 @@ namespace Задача_6
             Random rnd = new Random();
             MyClass A = new MyClass(rnd.Next(100), rnd.Next(100));
             A.Prisvoit(rnd.Next(100));
+            A.Show();
+            A.Prisvoit(rnd.Next(100), rnd.Next(100));
             A.Show();
             Console.ReadKey();
         }
