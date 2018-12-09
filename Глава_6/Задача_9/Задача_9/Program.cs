@@ -64,14 +64,13 @@ namespace Задача_9
                 {
                     A = n.Length / 2;
                     B = n[A];
-                    Console.WriteLine("Mediana value is: " + B);
                 }
                 else
                 {
                     A = (n.Length / 2);
-                    B = A + (A - 1) / 2;
-                    Console.WriteLine("Mediana value is: " + B);
+                    B = n[A] + (n[A] - 1) / 2;
                 }
+                Console.WriteLine("Mediana value is: " + B);
             }
         }
         static void Main()
@@ -87,8 +86,8 @@ namespace Задача_9
             }
             Console.WriteLine("|");
             MyClass A = new MyClass(Numbers);
-            //MyClass.MethodMaximum(Numbers);
-            //MyClass.MethodMinimum(Numbers);
+            MyClass.MethodMaximum(Numbers);
+            MyClass.MethodMinimum(Numbers);
             MyClass.MethodMediana(Numbers);
             Console.ReadKey();
         }
