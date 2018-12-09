@@ -49,11 +49,9 @@ namespace Задача_7
     {
         static void Main()
         {
-            //Random rnd = new Random();
-            //int size = rnd.Next(1, 5);
-            //char[] TextMassive = new char[size];
+            char[] TextMassive = new char[2] {'A', 'B' };
             MyClass A = new MyClass();            
-            A.Prisvoit();
+            A.Prisvoit(TextMassive);
             A.Show();
             Console.ReadKey();
         }
