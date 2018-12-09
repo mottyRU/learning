@@ -10,17 +10,6 @@ namespace Задача_7
     {
         public char Symbol;
         public string Text;
-        char[] TextMassive = new char [2];
-        /*public MyClass()
-        {
-            Random rnd = new Random();
-            int size = rnd.Next(1, 5);
-            char[] TextMassive = new char[size];
-            for (int i = 0; i < TextMassive.Length; i++)
-            {
-                TextMassive[i] = (char) rnd.Next(100);
-            }
-        }*/
         public void Prisvoit(char n)
         {
             Symbol = n;
@@ -37,19 +26,19 @@ namespace Задача_7
             }
             else
             {
-                Text = "" + n;
+                Text = Convert.ToString(n);
             }
         }
         public void Show()
         {
-            Console.WriteLine("" + Text+" " + Symbol+" " + TextMassive);
+            Console.WriteLine("" + Text+" " + Symbol);
         }
     }
     class Program
     {
         static void Main()
         {
-            char[] TextMassive = new char[2] {'A', 'B' };
+            char[] TextMassive = new char[2] {'A', 'B'};
             MyClass A = new MyClass();            
             A.Prisvoit(TextMassive);
             A.Show();
