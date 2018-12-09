@@ -10,27 +10,6 @@ namespace Задача_9
     {
         class MyClass
         {
-            public MyClass (int[] n)
-            {
-                int Hranitel;
-                for (int i = 1; i < n.Length; i++)
-                {
-                    for (int j = 0; j < n.Length - 1; j++)
-                    {
-                        if (n[j] > n[j + 1])
-                        {
-                            Hranitel = n[j + 1];
-                            n[j + 1] = n[j];
-                            n[j] = Hranitel;
-                        }
-                    }
-                }
-                for (int i = 0; i < n.Length; i++)
-                {
-                    Console.Write("| " + n[i] + " ");
-                }
-                Console.WriteLine("|");
-            }
             public static void MethodMaximum(int [] n)
             {
                 int index = 0;
@@ -68,7 +47,7 @@ namespace Задача_9
                 else
                 {
                     A = (n.Length / 2);
-                    B = n[A] + (n[A] - 1) / 2;
+                    B = (n[A] + n[A-1]) / 2;
                 }
                 Console.WriteLine("Mediana value is: " + B);
             }
@@ -76,8 +55,7 @@ namespace Задача_9
         static void Main()
         {
             Random rnd = new Random();
-            //int size = rnd.Next(10);
-            int size = 6;
+            int size = rnd.Next(10);
             int[] Numbers = new int[size];
             for (int i = 0; i < Numbers.Length; i++)
             {
@@ -85,7 +63,12 @@ namespace Задача_9
                 Console.Write("| " + Numbers[i] + " ");
             }
             Console.WriteLine("|");
-            MyClass A = new MyClass(Numbers);
+            Array.Sort(Numbers);
+            for (int i = 0; i < Numbers.Length; i++)
+            {
+                Console.Write("| " + Numbers[i] + " ");
+            }
+            Console.WriteLine("|");
             MyClass.MethodMaximum(Numbers);
             MyClass.MethodMinimum(Numbers);
             MyClass.MethodMediana(Numbers);
