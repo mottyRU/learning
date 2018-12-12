@@ -14,9 +14,8 @@ namespace Задача_1
             for (int i = 0; i < n.Length; i++)
             {
                 A = n.Insert(i, " ");
-                return A;
             }
-            return n;
+            return A;
         }
         static void Main()
         {
