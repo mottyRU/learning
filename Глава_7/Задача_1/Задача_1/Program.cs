@@ -10,9 +10,11 @@ namespace Задача_1
     {
         public static string Probel(string n)
         {
+            string A;
             for (int i = 0; i < n.Length; i++)
             {
-                n.Insert(i, " ");
+                A = n.Insert(i, " ");
+                return A;
             }
             return n;
         }
@@ -20,10 +22,9 @@ namespace Задача_1
         {
             string NewText;
             string text = "Hello world!";
+            NewText = Probel(text);
             Console.WriteLine("Значение до: " + text);
-            Probel(text);
-            NewText = Probel(n);
-            Console.WriteLine("Значение после: " + m);
+            Console.WriteLine("Значение после: " + NewText);
             Console.ReadKey();
         }
     }
