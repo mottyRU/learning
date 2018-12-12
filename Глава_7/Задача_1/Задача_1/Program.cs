@@ -10,10 +10,10 @@ namespace Задача_1
     {
         public static string Probel(string n)
         {
-            string A;
+            string A=n;
             for (int i = 0; i < n.Length; i++)
             {
-                A = n.Insert(i, " ");
+                A = A.Insert(i, " ");
             }
             return A;
         }
