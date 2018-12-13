@@ -10,12 +10,11 @@ namespace Задача_1
     {
         public static string Probel(string n)
         {
-            string A=n;
-            for (int i = 0; i < n.Length; i++)
-            {
-                A = A.Insert(i, " ");
-            }
-            return A;
+            string[] Text2;
+            string Hranitel;
+            Text2 = n.Split();
+            Hranitel = Text2.Join(" ", n);
+            return Hranitel;
         }
         static void Main()
         {
