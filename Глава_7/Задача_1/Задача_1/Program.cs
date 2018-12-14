@@ -10,16 +10,16 @@ namespace Задача_1
     {
         public static string Probel(string n)
         {
-            string[] Text2;
-            string Hranitel;
-            Text2 = n.Split();
-            Hranitel = Text2.Join(" ", n);
+            string[] Text2 = n.Split();
+            string Hranitel = String.Join("", Text2);
+            char[] Symbs = Hranitel.ToCharArray();
+            Hranitel = String.Join(" ", Symbs);
             return Hranitel;
         }
         static void Main()
         {
             string NewText;
-            string text = "Hello world!";
+            String text = "Hello wild world!";
             NewText = Probel(text);
             Console.WriteLine("Значение до: " + text);
             Console.WriteLine("Значение после: " + NewText);
