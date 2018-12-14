@@ -11,17 +11,9 @@ namespace Задача_7
         public static string Reversed(string n)
         {
             string[] Revers = n.Split();
-            string str ="";
-            for (int i = Revers.Length-1; i >= 0 ; i--)
-            {
-                char[] A = Revers[i].ToCharArray();
-                foreach (char s in A)
-                {
-                    str = s + str;
-                }
-                str = " " + str;
-            }
-            return str;
+            Array.Reverse(Revers);
+            
+            return String.Join(" ", Revers);
         }
         static void Main()
         {
