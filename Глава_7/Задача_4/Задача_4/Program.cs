@@ -12,12 +12,12 @@ namespace Задача_4
         {
             char[] Text1 = n.ToCharArray();
             char[] Text2 = m.ToCharArray();
-            char[] Hranitel_1, Hranitel_2;
-            for (int i = 0; i < n.Length; i++)
+            string Hranitel_1, Hranitel_2;
+            foreach (int s in Text1)
             {
-                if (n.Contains(Text2[i]) == true) Hranitel_1[i] = Text2[i]; 
+                if (n.Contains(Text2[s]) == false) Hranitel_1 ="" + Text2[s]; 
             }
-            Array.Sort(Hranitel_1);
+            String.Sort(Hranitel_1);
             for (int i = 0; i < m.Length; i++)
             {
                 if (m.Contains(Text1[i]) == true) Hranitel_2[i] = Text1[i];
