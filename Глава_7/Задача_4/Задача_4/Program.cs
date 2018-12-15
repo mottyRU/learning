@@ -10,28 +10,31 @@ namespace Задача_4
     {
         public static bool Compare(string n, string m)
         {
-            char[] Text1 = n.ToCharArray();
-            char[] Text2 = m.ToCharArray();
+            char[] Text1, Text2;
             string Hranitel_1 = "", Hranitel_2 = "";
             foreach (char s in n)
             {
-                if (n.Contains(Hranitel_1) == false) Hranitel_1 +=s; 
+                if (!Hranitel_1.Contains(s)) Hranitel_1 +=s; 
             }
-            String.Sort(Hranitel_1);
-            for (int i = 0; i < m.Length; i++)
+            Text1 = Hranitel_1.ToCharArray();
+            Array.Sort(Text1);
+            Hranitel_1 = new string (Text1);
+
+            foreach (char s in m)
             {
-                if (m.Contains(Text1[i]) == true) Hranitel_2[i] = Text1[i];
+                if (!Hranitel_2.Contains(s)) Hranitel_2 += s;
             }
-            Array.Sort(Hranitel_2);
+            Text2 = Hranitel_2.ToCharArray();
+            Array.Sort(Text2);
+            Hranitel_2 = new string(Text2);
             if (Hranitel_1 == Hranitel_2) return true;
             return false;
 
         }
         static void Main()
         {
-            string Text1 = "ABCD", Text2 = "DCBA";
-            Console.WriteLine("Ищем текст {0}", Text2);
-            Console.WriteLine("Text_1 == Text_2: {0}", Compare(Text1, Text2));
+            string Text1 = "ABDF", Text2 = "DFBAD";
+            Console.WriteLine("{0} == {1}: {2}", Text1, Text2, Compare(Text1, Text2));
             Console.ReadKey();
         }
     }
