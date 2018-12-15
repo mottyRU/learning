@@ -27,9 +27,7 @@ namespace Задача_4
             Text2 = Hranitel_2.ToCharArray();
             Array.Sort(Text2);
             Hranitel_2 = new string(Text2);
-            if (Hranitel_1 == Hranitel_2) return true;
-            return false;
-
+            return (Hranitel_1 == Hranitel_2);
         }
         static void Main()
         {
