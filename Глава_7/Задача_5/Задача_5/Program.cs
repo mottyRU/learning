@@ -8,31 +8,31 @@ namespace Задача_5
 {
     class Program
     {
-        public static int IndexSearch(string n, char m)
+        public static int[] IndexSearch(string n, char m)
         {
-            int start;
+            int start = 0;
             int at = 0;
-            int end;
-            int count = 0;
-            end = n.Length;
-            start = 0;
-            Console.Write("The string 'l' occurs at position(s): ");
-            while ((start <= end) && (at > -1))
+            int end = n.Length;
+            int[] NewMassive = new int[n.Length];
+            Console.Write("The string '{0}' occurs at position(s): ", m);
+            while (start <= end)
             {
-                count = end - start;
-                at = n.IndexOf("l", start, count);
+                at = n.IndexOf(m, start);
                 if (at == -1) break;
-                Console.Write("{0} ", at);
+                //Console.Write("{0} ", at);
+                NewMassive[n[end-1]] = at;
+                end = end - 1;
                 start = at + 1;
+                Array.Resize(ref NewMassive, at);
             }
             Console.WriteLine();
-            return at;
+            return NewMassive;
         }
         static void Main()
         {
             string Text = "Hello Wild World";
-            char ForSearch = 'W';            
-            IndexSearch(Text, ForSearch);
+            char ForSearch = 'l';            
+            Console.WriteLine(IndexSearch(Text, ForSearch));
             Console.ReadKey();
         }
     }
