@@ -15,7 +15,7 @@ namespace Задача_8
         }
         public override string ToString()
         {
-            return base.ToString();
+            return TextPole;
         }
     }
     class Program
@@ -26,7 +26,7 @@ namespace Задача_8
             A.TextPole = "Hello_Wild_World";
             Console.WriteLine(A.TextPole);
             A.Vstavka("MUR", 11);
-            Console.WriteLine(A.TextPole);
+            Console.WriteLine(A);
             Console.ReadKey();
         }
     }
