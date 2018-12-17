@@ -9,18 +9,24 @@ namespace Задача_8
     class MyClass
     {
         public string TextPole;
-        public string Vstavka(string n, int m)
+        public void Vstavka(string n, int m)
         {
-            return TextPole.Insert(m, n);
+            TextPole = TextPole.Insert(m, n);
+        }
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             MyClass A = new MyClass();
             A.TextPole = "Hello_Wild_World";
-            Console.WriteLine(A.Vstavka("MUR", 11));
+            Console.WriteLine(A.TextPole);
+            A.Vstavka("MUR", 11);
+            Console.WriteLine(A.TextPole);
             Console.ReadKey();
         }
     }
