@@ -8,19 +8,21 @@ namespace Задача_7
 {
     class Program
     {
-        public static string Reversed(string n)
+        public static string MethodSubstring(string s, int n, int m)
         {
-            string[] Revers = n.Split();
-            Array.Reverse(Revers);
-            
-            return String.Join(" ", Revers);
+            string NewText = "";
+            for (int i = n; i < s.Length; i++)
+            {
+                NewText += s[i];
+                if (NewText.Length == m) break;
+            }            
+            return NewText;
         }
         static void Main()
         {
-            string Text = "Hello Wild World", NewText;
-            NewText = Reversed(Text);
-            Console.WriteLine("Текст до: " + Text);
-            Console.WriteLine("Текст после: " + NewText);
+            string Text = "Hello_Wild_World";
+            int a = 1, b = 5;
+            Console.WriteLine("Result is: {0}", MethodSubstring(Text, a, b));
             Console.ReadKey();
         }
     }
