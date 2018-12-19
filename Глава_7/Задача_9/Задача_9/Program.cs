@@ -17,12 +17,8 @@ namespace Задача_9
         }
         public override string ToString()
         {
-            string Txt = "";
-            for (int i = 0; i < NewTextMassive(Text, Symbol).Length; i++)
-            {
-                Console.WriteLine("\n|"+ NewTextMassive(Text, Symbol)[i]+"|");
-            }
-            return Txt += "\nOld text: "+Text+"\nSymbol to split: "+Symbol;
+            string Massive = String.Join(".", NewTextMassive());
+            return Massive += "\nPole Text: "+Text+"\nPole Symbol: "+Symbol;
         }
     }
     class Program
