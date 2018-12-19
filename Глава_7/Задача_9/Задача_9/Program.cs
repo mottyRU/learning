@@ -10,9 +10,9 @@ namespace Задача_9
     {
         public string Text;
         public char Symbol;
-        public string[] NewTextMassive(string n, char m)
+        public string[] NewTextMassive()
         {
-            string[] NewText = n.Split(m);
+            string[] NewText = Text.Split(Symbol);
             return NewText;
         }
         public override string ToString()
@@ -32,12 +32,6 @@ namespace Задача_9
             MyClass A = new MyClass();
             A.Text = "Hello_Wild_World";
             A.Symbol = '_';
-            string k = "Hel lo";
-            foreach (string s in A.NewTextMassive(k, ' '))
-            {
-                Console.WriteLine(s);
-            }
-
             Console.Write("New text: ");
             Console.WriteLine(A);
             Console.ReadKey();
