@@ -32,6 +32,12 @@ namespace Задача_9
             MyClass A = new MyClass();
             A.Text = "Hello_Wild_World";
             A.Symbol = '_';
+            string k = "Hel lo";
+            foreach (string s in A.NewTextMassive(k, ' '))
+            {
+                Console.WriteLine(s);
+            }
+
             Console.Write("New text: ");
             Console.WriteLine(A);
             Console.ReadKey();
