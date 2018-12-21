@@ -8,9 +8,10 @@ namespace Задача_10
 {
     class MyClass
     {
-        public int[] Numbers = new int[10];
+        public int[] Numbers;
         public MyClass()
         {
+            Numbers = new int[10];
             Random rnd = new Random();
             for (int i = 0; i < Numbers.Length; i++)
             {
@@ -25,7 +26,7 @@ namespace Задача_10
             {
                 Summa += s; 
             }
-            Txt += "Значения массива: " + String.Join(".", Numbers);
+            Txt += "Значения массива: " + String.Join(", ", Numbers);
             Txt += "\nКоличество элементов в массиве: " + Numbers.Length;
             Txt += "\nСреднее значение элементов массива: " + Convert.ToString(Summa / Numbers.Length);
             return Txt;
@@ -36,9 +37,10 @@ namespace Задача_10
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            MyClass A = new MyClass();        
+            MyClass A = new MyClass();
+            MyClass B = new MyClass();
             Console.WriteLine(A);
+            Console.WriteLine(B);
             Console.ReadKey();
         }
     }
