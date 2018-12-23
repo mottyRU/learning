@@ -9,14 +9,13 @@ namespace Задача_2
     class MyClass
     {
         public int[] Numbers;
-        public MyClass(int n)
+        public MyClass(int Size)
         {
-            int Size = n;
             Numbers = new int[Size];
-            foreach (int s in Numbers)
+            for (int i = 0; i > Numbers.Length; i++)
             {
-                Numbers[s] = 0;
-                //Console.Write(Numbers[s]+" ");
+                Numbers[i] = 0;
+                //Console.Write(Numbers[i]+" ");
             }
             //Console.WriteLine();
         }
