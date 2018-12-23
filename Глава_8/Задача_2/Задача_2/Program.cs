@@ -33,10 +33,8 @@ namespace Задача_2
         }
         public static MyClass operator++(MyClass a)
         {
-            Array.Resize(ref a.Numbers, 6);
-            string Text = "";
-            Text += String.Join(", ", a.Numbers);
-            //Console.WriteLine(Text);
+            Array.Resize(ref a.Numbers, a.Numbers.Length + 1);
+            //присвоить значение новому элементиу
             return a;
         }
         public static MyClass operator--(MyClass a)
@@ -49,12 +47,11 @@ namespace Задача_2
         }
         public static MyClass operator +(MyClass a, MyClass b)
         {
-            int[] c = a.Numbers.Concat(b.Numbers).ToArray();
-            /*int[] z = new int[a.Numbers.Length + b.Numbers.Length];
-            a.Numbers.CopyTo(z, 0);
-            b.Numbers.CopyTo(z, a.Numbers.Length);*/
-            Console.WriteLine(String.Join(", ", c));
-            return new MyClass(c);
+            MyClass C = new MyClass(5);
+            a.Numbers.CopyTo(C.Numbers, a.Numbers.Length - 1);
+            b.Numbers.CopyTo(C.Numbers, b.Numbers.Length - 1);
+            //Console.WriteLine(String.Join(", ", c));
+            return C;
         }
         public static MyClass operator +(MyClass a, int m)
         {
@@ -88,13 +85,14 @@ namespace Задача_2
         {
             MyClass A = new MyClass(5);
             MyClass B = new MyClass(5);
+            MyClass C;
             string Z = ~A;
-            Console.WriteLine("First: "+Z);
+            Console.WriteLine("New Massive: "+Z);
             ++A;
             Console.WriteLine(A);
             --A;
             Console.WriteLine(A);
-            MyClass C = A + B;
+            C = A + B;
             C = 1 + B;
             C = A + 5;
             //Console.WriteLine(C);
