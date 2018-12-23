@@ -26,7 +26,7 @@ namespace Задача_1
         public static int operator+(MyClass a, int b)
         {
             int m = a.Symbol + b;            
-            return m;
+            return new MyClass((char) m);
         }
         public static int operator +(int b, MyClass a)
         {
