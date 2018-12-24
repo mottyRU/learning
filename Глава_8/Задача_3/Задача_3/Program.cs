@@ -16,13 +16,11 @@ namespace Задача_3
         }
         public static bool operator >(MyClass a, MyClass b)
         {
-            if ((Math.Pow(a.Number1, 2) + Math.Pow(a.Number2, 2)) > (Math.Pow(b.Number1, 2) + Math.Pow(b.Number2, 2))) return true;
-            else return false;
+            return ((Math.Pow(a.Number1, 2) + Math.Pow(a.Number2, 2)) > (Math.Pow(b.Number1, 2) + Math.Pow(b.Number2, 2)));
         }
         public static bool operator <(MyClass a, MyClass b)
         {
-            if ((Math.Pow(a.Number1, 2) + Math.Pow(a.Number2, 2)) < (Math.Pow(b.Number1, 2) + Math.Pow(b.Number2, 2))) return true;
-            else return false;
+            return ((Math.Pow(a.Number1, 2) + Math.Pow(a.Number2, 2)) < (Math.Pow(b.Number1, 2) + Math.Pow(b.Number2, 2)));
         }
     }
     class Program
