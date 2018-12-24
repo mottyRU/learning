@@ -12,18 +12,11 @@ namespace Задача_2
         public MyClass(int Size)
         {
             Numbers = new int[Size];
-            for (int i = 0; i > Numbers.Length; i++)
+            for (int i = 0; i > Numbers.Length-1; i++)
             {
                 Numbers[i] = 0;
-                //Console.Write(Numbers[i]+" ");
             }
-            //Console.WriteLine();
         }
-
-        public MyClass(int[] c)
-        {
-        }
-
         public static string operator~(MyClass a)
         {
             string Text = "";
@@ -35,47 +28,39 @@ namespace Задача_2
         {
             Array.Resize(ref a.Numbers, a.Numbers.Length + 1);
             //присвоить значение новому элементиу
+            a.Numbers[a.Numbers.Length - 1] = 0;
             return a;
         }
         public static MyClass operator--(MyClass a)
         {
-            Array.Resize(ref a.Numbers, 4);
-            string Text = "";
-            Text += String.Join(", ", a.Numbers);
-            //Console.WriteLine(Text);
+            Array.Resize(ref a.Numbers, a.Numbers.Length - 1);
             return a;
         }
         public static MyClass operator +(MyClass a, MyClass b)
         {
-            MyClass C = new MyClass(5);
-            a.Numbers.CopyTo(C.Numbers, a.Numbers.Length - 1);
-            b.Numbers.CopyTo(C.Numbers, b.Numbers.Length - 1);
-            //Console.WriteLine(String.Join(", ", c));
-            return C;
-        }
-        public static MyClass operator +(MyClass a, int m)
-        {
-            int[] result = new int[a.Numbers.Length + 1];
-            result[a.Numbers.Length - 1] = m;
-            for (int i = a.Numbers.Length-1; i >= 0; i--)
-                result[a.Numbers.Length-1] = a.Numbers[i];
-            Console.WriteLine("New massive END: " + String.Join(", ", a.Numbers));
-            return new MyClass(result);
+            MyClass c = new MyClass((a.Numbers.Length+b.Numbers.Length));
+            a.Numbers.CopyTo(c.Numbers, a.Numbers[0]);
+            b.Numbers.CopyTo(c.Numbers, a.Numbers.Length);
+            return c;
         }
         public static MyClass operator +(int n, MyClass b)
         {
-            int[] result = new int[b.Numbers.Length + 1];
-            result[0] = n;
-            for (int i = 0; i < b.Numbers.Length; i++)
-                result[i + 1] = b.Numbers[i];
-            Console.WriteLine("New massive START: " + String.Join(", ", b.Numbers));
-            return new MyClass(result);
+            MyClass c = new MyClass(b.Numbers.Length + 1);
+            b.Numbers.CopyTo(c.Numbers, b.Numbers[1]);
+            c.Numbers[0] = 9;
+            return c;
+        }
+        public static MyClass operator +(MyClass a, int m)
+        {
+            MyClass c = new MyClass(a.Numbers.Length + 1);
+            a.Numbers.CopyTo(c.Numbers, a.Numbers[0]);
+            c.Numbers[c.Numbers.Length-1] = 9;
+            return c;
         }
         public override string ToString()
         {
-            string Txt = "Massive: ";
+            string Txt = "Result: ";
             Txt += String.Join(", ", Numbers);
-            Txt += Numbers;
             return Txt;
         }
     }
@@ -92,10 +77,17 @@ namespace Задача_2
             Console.WriteLine(A);
             --A;
             Console.WriteLine(A);
+            for (int i = 0; i < A.Numbers.Length; i++)
+            {
+                A.Numbers[i] = i;
+                B.Numbers[i] = i;
+            }
             C = A + B;
+            Console.WriteLine(C);
             C = 1 + B;
+            Console.WriteLine(C);
             C = A + 5;
-            //Console.WriteLine(C);
+            Console.WriteLine(C);
             Console.ReadKey();
         }
     }
