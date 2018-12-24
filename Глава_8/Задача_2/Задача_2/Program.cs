@@ -39,22 +39,22 @@ namespace Задача_2
         public static MyClass operator +(MyClass a, MyClass b)
         {
             MyClass c = new MyClass((a.Numbers.Length+b.Numbers.Length));
-            a.Numbers.CopyTo(c.Numbers, a.Numbers[0]);
+            a.Numbers.CopyTo(c.Numbers, 0);
             b.Numbers.CopyTo(c.Numbers, a.Numbers.Length);
             return c;
         }
         public static MyClass operator +(int n, MyClass b)
         {
             MyClass c = new MyClass(b.Numbers.Length + 1);
-            b.Numbers.CopyTo(c.Numbers, b.Numbers[1]);
-            c.Numbers[0] = 9;
+            b.Numbers.CopyTo(c.Numbers, 1);
+            c.Numbers[0] = n;
             return c;
         }
         public static MyClass operator +(MyClass a, int m)
         {
             MyClass c = new MyClass(a.Numbers.Length + 1);
-            a.Numbers.CopyTo(c.Numbers, a.Numbers[0]);
-            c.Numbers[c.Numbers.Length-1] = 9;
+            a.Numbers.CopyTo(c.Numbers, 0);
+            c.Numbers[c.Numbers.Length-1] = m;
             return c;
         }
         public override string ToString()
@@ -79,8 +79,8 @@ namespace Задача_2
             Console.WriteLine(A);
             for (int i = 0; i < A.Numbers.Length; i++)
             {
-                A.Numbers[i] = i;
-                B.Numbers[i] = i;
+                A.Numbers[i] = i+10;
+                B.Numbers[i] = i+10;
             }
             C = A + B;
             Console.WriteLine(C);
