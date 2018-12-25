@@ -17,22 +17,22 @@ namespace Задача_5
         }
         public static bool operator true(MyClass a)
         {
-            return a.Number - a.Symbol >= 10;
+            return a.Number - a.Symbol <= 10;
         }
         public static bool operator false(MyClass a)
         {
-            return a.Number - a.Symbol < 10;
+            return a.Number - a.Symbol >= 10;
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            MyClass A = new MyClass(78, 'A');
+            MyClass A = new MyClass(62, 'A');
             while (A)
             {
                 Console.WriteLine(" " + A.Symbol);
-                A.Symbol++;
+                A.Symbol--;
             }
             Console.ReadKey();
         }
