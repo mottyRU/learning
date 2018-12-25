@@ -15,9 +15,6 @@ namespace Задача_7
             {
                 Text = n;
             }
-            public MyClass()
-            {
-            }
             public static implicit operator int (MyClass a)
             {
                 int TextLenght = a.Text.Length;
@@ -30,8 +27,12 @@ namespace Задача_7
             }
             public static implicit operator MyClass (int n)
             {
-                MyClass B = new MyClass();
-                B.ToString();
+                string NewText="";
+                for (int i = 0; i != n; i++)
+                {
+                    NewText += "A";
+                }
+                MyClass B = new MyClass(NewText);
                 return B;
             }
 
@@ -43,8 +44,8 @@ namespace Задача_7
             Console.WriteLine("A to Int: " + a);
             char b = A;
             Console.WriteLine("A to Char: " + b);
-            int NewNumber = 5;
-            Console.WriteLine("Int to Object: " + NewNumber);
+
+            Console.WriteLine("Int to Object: " + );
             Console.ReadKey();
         }
     }
