@@ -44,8 +44,8 @@ namespace Задача_7
             Console.WriteLine("A to Int: " + a);
             char b = A;
             Console.WriteLine("A to Char: " + b);
-            int n = (MyClass) 5;
-            Console.WriteLine("Int to Object: " );
+            MyClass n = 5;
+            Console.WriteLine("Int to Object: " + n.Text);
             Console.ReadKey();
         }
     }
