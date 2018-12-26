@@ -33,7 +33,7 @@ namespace Задача_8
         public static implicit operator Pereopredelitel(int n)
         {
             Pereopredelitel B = new Pereopredelitel();
-            Array.Resize(ref B.Numbers, 7);
+            Array.Resize(ref B.Numbers, n);
             for (int i = 0; i != n; i++)
             {
                 B.Numbers[i] = 0;
