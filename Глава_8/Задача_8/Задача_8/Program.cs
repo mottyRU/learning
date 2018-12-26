@@ -9,7 +9,7 @@ namespace Задача_8
     class Pereopredelitel
     {
         public int[] Numbers;
-        public Pereopredelitel(int n)
+        public Pereopredelitel(int n = 10)
         {
             Numbers = new int[n];
             for (int i = 0; i < Numbers.Length; i++)
@@ -45,7 +45,7 @@ namespace Задача_8
     {
         static void Main(string[] args)
         {
-            Pereopredelitel A = new Pereopredelitel(5);
+            Pereopredelitel A = new Pereopredelitel();
             string x = A;
             Console.WriteLine("Object to String: " + x);
             int y = A;
