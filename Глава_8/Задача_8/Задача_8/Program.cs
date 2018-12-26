@@ -8,9 +8,10 @@ namespace Задача_8
 {
     class Pereopredelitel
     {
-        public int[] Numbers =new int[5];
-        public Pereopredelitel()
+        public int[] Numbers;
+        public Pereopredelitel(int n)
         {
+            Numbers = new int[n];
             for (int i = 0; i < Numbers.Length; i++)
             {
                 Numbers[i] = i;
@@ -32,9 +33,8 @@ namespace Задача_8
         }
         public static implicit operator Pereopredelitel(int n)
         {
-            Pereopredelitel B = new Pereopredelitel();
-            Array.Resize(ref B.Numbers, n);
-            for (int i = 0; i != n; i++)
+            Pereopredelitel B = new Pereopredelitel(n);
+            for (int i = 0; i < B.Numbers.Length; i++)
             {
                 B.Numbers[i] = 0;
             }
@@ -45,7 +45,7 @@ namespace Задача_8
     {
         static void Main(string[] args)
         {
-            Pereopredelitel A = new Pereopredelitel();
+            Pereopredelitel A = new Pereopredelitel(5);
             string x = A;
             Console.WriteLine("Object to String: " + x);
             int y = A;
