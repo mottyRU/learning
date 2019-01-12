@@ -10,20 +10,21 @@ namespace Задача_4
     {
         private uint Number;
         private string Text;
-        public BearClass(uint n, string m)
+        public BearClass(uint n)
         {
             Number = n;
-            Text = m;
+            Text = Convert.ToString(Number, 8);
         }
         public uint PrisvoitZnachenie
         {
             set
             {
-                if (value < 0) value = 99;
-                Number = value;
-                uint A = Number % 8;
-                uint B = (Number / 8) % 8;
-                Text = "Number =  " +  B + A;
+                if (value < 0) Number = 99;
+                else Number = value;
+                //uint A = Number % 8;
+                //uint B = (Number / 8) % 8;
+                string A = Convert.ToString(Number, 8);
+                Text = "Number =  " +  A;
             }
         }
         public override string ToString()
@@ -36,16 +37,8 @@ namespace Задача_4
     {
         static void Main(string[] args)
         {
-            BearClass A = new BearClass(25, "31");
+            BearClass A = new BearClass(25);
             A.PrisvoitZnachenie = 19;
-            /*int z = 19;
-            int y = 8;
-            int x = z % y;
-            int w = (z / y)%8;
-            string txt ="";
-            Console.WriteLine(x);
-            Console.WriteLine(w);
-            Console.WriteLine(txt + w + x);*/
             Console.WriteLine(A);
             Console.ReadKey();
         }
