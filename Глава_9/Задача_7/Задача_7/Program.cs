@@ -13,20 +13,20 @@ namespace Задача_7
         public BuClass(uint n)
         {
             Number = n;
+            string Z = Convert.ToString(Number, 2);
+            Console.WriteLine(Z);
+            Priemnik = new uint[Z.Length];
+            for (int i = 0; i < Z.Length; i++)
+            {
+                Priemnik[i] = Convert.ToUInt32(Z[i]);
+                Console.Write("|" + Priemnik[i]);
+            }
+            Console.WriteLine("|");
         }
         public uint this[int k]
         {
             get
             {
-                string Z = Convert.ToString(Number, 2);
-                Console.WriteLine(Z);
-                Priemnik = new uint[Z.Length];
-                for (int i = 0; i < Z.Length; i++)
-                {
-                    Priemnik[k] = Convert.ToUInt32(Z[i]);
-                    Console.Write("|" + Priemnik[k]);
-                }
-                Console.WriteLine("|");
                 return Priemnik[k];
             }
         }
@@ -36,7 +36,7 @@ namespace Задача_7
         static void Main(string[] args)
         {
             BuClass A = new BuClass(150);
-            Console.WriteLine(A[0]);
+            Console.WriteLine(A[7]);
             Console.ReadKey();
         }
     }
