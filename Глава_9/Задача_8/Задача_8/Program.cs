@@ -8,7 +8,6 @@ namespace Задача_8
 {
     class CatClass
     {
-        public uint Number;
         public uint Hranitel;
         public uint this[int i]
         {
