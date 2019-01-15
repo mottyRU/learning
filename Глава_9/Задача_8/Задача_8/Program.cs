@@ -18,8 +18,7 @@ namespace Задача_8
             set
             {
                 uint Hranitel;
-                Number = value % 10;
-                Hranitel = Number;
+                Hranitel = value % 10;
                 Number += Hranitel * Convert.ToUInt32(Math.Pow(10, i));
             }
         }
