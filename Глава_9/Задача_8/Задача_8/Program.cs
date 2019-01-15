@@ -8,7 +8,7 @@ namespace Задача_8
 {
     class CatClass
     {
-        private uint Number;
+        private uint Number = 0;
         public void ViewResult()
         {
             Console.WriteLine(Number);
@@ -20,7 +20,7 @@ namespace Задача_8
                 uint Hranitel;
                 Number = value % 10;
                 Hranitel = Number;
-                Number = Hranitel * Convert.ToUInt32(Math.Pow(10, i));
+                Number += Hranitel * Convert.ToUInt32(Math.Pow(10, i));
             }
         }
     }
