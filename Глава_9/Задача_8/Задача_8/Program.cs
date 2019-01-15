@@ -9,43 +9,18 @@ namespace Задача_8
     class CatClass
     {
         private uint Number;
-        private uint Hranitel;
-        private uint NewValue;
-        public uint this[int i]
+        public void ViewResult()
+        {
+            Console.WriteLine(Number);
+        }
+        public uint this[uint i]
         {
             set
             {
+                uint Hranitel;
                 Number = value % 10;
-                if (i == 0)
-                {
-                    Number += 0;
-                    Hranitel = Number;
-                    Console.WriteLine(Number);
-                }                    
-                else if (i == 1)
-                {
-                    NewValue = Number*10 + Hranitel;
-                    Number = NewValue;
-                    Console.WriteLine(NewValue);
-                }
-                else if (i == 2)
-                {
-                    NewValue = Number * 100 + NewValue;
-                    Number = NewValue;
-                    Console.WriteLine(NewValue);
-                }
-                else if (i == 3)
-                {
-                    NewValue = Number * 1000 + NewValue;
-                    Number = NewValue;
-                    Console.WriteLine(NewValue);
-                }
-                else if (i == 4)
-                {
-                    NewValue = Number * 10000 + NewValue;
-                    Number = NewValue;
-                    Console.WriteLine(NewValue);
-                }
+                Hranitel = Number;
+                Number = Hranitel * Convert.ToUInt32(Math.Pow(10, i));
             }
         }
     }
@@ -55,10 +30,13 @@ namespace Задача_8
         {
             CatClass A = new CatClass();
             A[0] = 5;
+            A.ViewResult();
             A[1] = 56;
+            A.ViewResult();
             A[2] = 57;
-            A[3] = 58;
-            A[4] = 79;
+            A.ViewResult();
+            //A[3] = 58;
+            //A[4] = 79;
             Console.ReadKey();
         }
     }
