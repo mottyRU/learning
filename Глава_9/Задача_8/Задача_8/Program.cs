@@ -8,24 +8,45 @@ namespace Задача_8
 {
     class CatClass
     {
-        public uint Hranitel;
+        private uint Number;
+        private uint Hranitel;
+        private uint NewValue;
         public uint this[int i]
         {
-
             set
             {
-                Hranitel = value % 10;
-                if (i == 0) Hranitel += 0;
-                else if (i == 1) Hranitel += 10;
-                else if (i == 2) Hranitel += 100;
-                else if (i == 3) Hranitel += 1000;
-                else if (i == 4) Hranitel += 10000;
+                Number = value % 10;
+                if (i == 0)
+                {
+                    Number += 0;
+                    Hranitel = Number;
+                    Console.WriteLine(Number);
+                }                    
+                else if (i == 1)
+                {
+                    NewValue = Number*10 + Hranitel;
+                    Number = NewValue;
+                    Console.WriteLine(NewValue);
+                }
+                else if (i == 2)
+                {
+                    NewValue = Number * 100 + NewValue;
+                    Number = NewValue;
+                    Console.WriteLine(NewValue);
+                }
+                else if (i == 3)
+                {
+                    NewValue = Number * 1000 + NewValue;
+                    Number = NewValue;
+                    Console.WriteLine(NewValue);
+                }
+                else if (i == 4)
+                {
+                    NewValue = Number * 10000 + NewValue;
+                    Number = NewValue;
+                    Console.WriteLine(NewValue);
+                }
             }
-        }
-        public void ShowResult()
-        {
-            Console.WriteLine(Hranitel);
-            Console.ReadKey();
         }
     }
     class Program
@@ -33,8 +54,12 @@ namespace Задача_8
         static void Main(string[] args)
         {
             CatClass A = new CatClass();
-            A[2] = 5;
-            A.ShowResult();
+            A[0] = 5;
+            A[1] = 56;
+            A[2] = 57;
+            A[3] = 58;
+            A[4] = 79;
+            Console.ReadKey();
         }
     }
 }
