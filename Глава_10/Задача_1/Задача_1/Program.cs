@@ -33,9 +33,8 @@ namespace Задача_1
         }
         public override string ToString()
         {
-            string Text = "";
-            if (BaseText == "") Text += "Alpha class: " + AlphaText;
-            else if (BaseText != "") Text += "Alpha class: " + AlphaText + "\n" + "Base class: " + BaseText;
+            string Text = "Alpha class: " + AlphaText;
+            if (BaseText != "") Text += "\n" + "Base class: " + BaseText;
             return Text;
         }
     }
@@ -44,10 +43,10 @@ namespace Задача_1
         static void Main(string[] args)
         {
             Base A = new Base("Hello_Wild_World");
-            //Alpha B = new Alpha("Good_bye_Wild_World", "Rrrrr");
+            Alpha B = new Alpha("Good_bye_Wild_World", "Rrrrr");
             Alpha B1 = new Alpha("Good_bye_Wild_World");
             Console.WriteLine(A);
-           // Console.WriteLine(B);
+            Console.WriteLine(B);
             Console.WriteLine(B1);
             Console.ReadKey();
         }
