@@ -43,8 +43,8 @@ namespace Задача_1
         static void Main(string[] args)
         {
             Base A = new Base("Hello_Wild_World");
-            Alpha B = new Alpha("Good_bye_Wild_World", "Rrrrr");
-            Alpha B1 = new Alpha("Good_bye_Wild_World");
+            Alpha B = new Alpha("Goodbye_Wild_World", "Rrrrr");
+            Alpha B1 = new Alpha("Goodbye_Wild_World");
             Console.WriteLine(A);
             Console.WriteLine(B);
             Console.WriteLine(B1);
