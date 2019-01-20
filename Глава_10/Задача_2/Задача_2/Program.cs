@@ -54,7 +54,7 @@ namespace Задача_2
         new public void Prisvoit()
         {
             Dauther_Number = 999;
-            //Mother_Text = "Dauther_Text_Without_Arguments";
+            Mother_Text = "Dauther_Text_Without_Arguments";
         }
         new public void Prisvoit(string n)
         {
@@ -84,7 +84,10 @@ namespace Задача_2
             Console.WriteLine(A[0]);
             Dauther B = new Dauther(1, "Goodbye");
             B.Prisvoit();
+            //B.Prisvoit(888); 
             Console.WriteLine(B);
+            Console.WriteLine(B.Svoistvo);
+            Console.WriteLine(B[0]); 
             Console.ReadKey();
         }
     }
