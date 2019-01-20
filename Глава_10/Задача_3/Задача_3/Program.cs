@@ -8,14 +8,10 @@ namespace Задача_3
 {
     class Mother
     {
-        public int[] Number;
+        public int[] Number = new int[5];
         public Mother(int[] n)
         {
-            Number = n;
-        }
-        public Mother(Mother A)
-        {
-            Number = A.Number;            
+            n.CopyTo(Number, 0);
         }
         public override string ToString()
         {
@@ -30,14 +26,10 @@ namespace Задача_3
     }
     class Alpha : Mother
     {
-        public char[] Symbols;
+        public char[] Symbols = new char[3];
         public Alpha(int[] n, char[] m) : base(n)
         {
-            Symbols = m;
-        }
-        public Alpha(Alpha B, Alpha C) : base(B)
-        {
-            Symbols = C.Symbols;
+            m.CopyTo(Symbols, 0);
         }
         public override string ToString()
         {
@@ -69,18 +61,17 @@ namespace Задача_3
             arr2[0] = 'z';
             for (int i = 0; i < arr1.Length; i++)
             {
-                Console.Write("|", arr1[i]);
+                Console.Write("|{0}", arr1[i]);
             }
             Console.WriteLine("|");
-            for (int i = 0; i < arr1.Length; i++)
+            for (int i = 0; i < arr2.Length; i++)
             {
-                Console.Write("|", arr2[i]);
+                Console.Write("|{0}", arr2[i]);
             }
             Console.WriteLine("|");
             Console.WriteLine(Numb_obj);
-            Console.WriteLine(Symb_obj);
-            
-            Console.ReadKey(); 
+            Console.WriteLine(Symb_obj);            
+            Console.ReadKey();  
         }
     }
 }
