@@ -60,17 +60,26 @@ namespace Задача_3
     {
         static void Main(string[] args)
         {
-            Mother Numb_obj = new Mother(new int[5] { 15, 16, 17, 18, 19 });
-            Mother A;
-            A = Numb_obj;
-            Console.WriteLine(A);
+            int[] arr1  = new int[5] { 15, 16, 17, 18, 19 };
+            char[] arr2 = new char[3] { 'a', 'b', 'c' };
+            Mother Numb_obj = new Mother(arr1);
+            Alpha Symb_obj = new Alpha(arr1, arr2);
+
+            arr1[0] = 0;
+            arr2[0] = 'z';
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.Write("|", arr1[i]);
+            }
+            Console.WriteLine("|");
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.Write("|", arr2[i]);
+            }
+            Console.WriteLine("|");
             Console.WriteLine(Numb_obj);
-            Alpha Symb_obj = new Alpha(new int[5] { 19, 18, 17, 16, 15 }, new char[3] { 'a', 'b', 'c' });
-            Alpha B;
-            Alpha C;
-            //B = A.Numb_obj;
-            C = Symb_obj;
-            Console.WriteLine(C);
+            Console.WriteLine(Symb_obj);
+            
             Console.ReadKey(); 
         }
     }
