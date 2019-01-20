@@ -38,6 +38,11 @@ namespace Задача_2
                 return Symbol;
             }            
         }
+        public override string ToString()
+        {
+            string Text = Mother_Text;
+            return Text;
+        }
     }
     class Dauther : Mother
     {
@@ -64,6 +69,11 @@ namespace Задача_2
             Dauther_Number = n;
             Mother_Text = m;
         }
+        public override string ToString()
+        {
+            string Text = Mother_Text + "\n" + Dauther_Number;
+            return Text;
+        }
     }
     class Program
     {
@@ -73,7 +83,8 @@ namespace Задача_2
             Console.WriteLine(A.Svoistvo);
             Console.WriteLine(A[0]);
             Dauther B = new Dauther(1, "Goodbye");
-            Console.WriteLine(B.Prisvoit);
+            B.Prisvoit();
+            Console.WriteLine(B);
             Console.ReadKey();
         }
     }
