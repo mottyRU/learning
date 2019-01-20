@@ -13,11 +13,11 @@ namespace Задача_2
         {
             Mother_Text = n;
         }
-        public void Mother_Prisvoit()
+        public void Prisvoit()
         {
             Mother_Text = "Mother_Text_Without_Arguments";
         }
-        public void Mother_Prisvoit(string n)
+        public void Prisvoit(string n)
         {
             Mother_Text = n;
         }
@@ -46,22 +46,23 @@ namespace Задача_2
         {
             Dauther_Number = n;
         }
-        new public void Mother_Prisvoit()
+        new public void Prisvoit()
         {
             Dauther_Number = 999;
             //Mother_Text = "Dauther_Text_Without_Arguments";
         }
-        public void Dauther_Prisvoit(string n)
+        new public void Prisvoit(string n)
         {
             Mother_Text = n;
         }
-        public void Dauther_Prisvoit(int n)
+        public void Prisvoit(int n)
         {
             Dauther_Number = n;
         }
-        public void Mother_Prisvoit(int n, string m)
+        public void Prisvoit(int n, string m)
         {
             Dauther_Number = n;
+            Mother_Text = m;
         }
     }
     class Program
@@ -72,7 +73,7 @@ namespace Задача_2
             Console.WriteLine(A.Svoistvo);
             Console.WriteLine(A[0]);
             Dauther B = new Dauther(1, "Goodbye");
-            Console.WriteLine(B.Dauther_Number);
+            Console.WriteLine(B.Prisvoit);
             Console.ReadKey();
         }
     }
