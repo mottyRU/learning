@@ -26,7 +26,7 @@ namespace Задача_3._10
                 }
                 A++;
             }
-            Console.WriteLine("Sum:" + A + "");
+            Console.WriteLine("Sum:" + B + "");
             Console.ReadKey();
         }
     }
