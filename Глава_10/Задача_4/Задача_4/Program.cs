@@ -40,7 +40,7 @@ namespace Задача_4
         public override string ToString()
         {
             string Text = "";
-            Text += "Alpha class: " + Alpha_Number;
+            Text += "Betta class: " + Alpha_Number;
             Text += "\nBetta class: " + Betta_Symbol;
             Text += "\n------------------------------";
             return Text;
@@ -62,11 +62,11 @@ namespace Задача_4
         public override string ToString()
         {
             string Text = "";
-            Text += "Alpha class: " + Alpha_Number;
-            Text += "\nBetta class: " + Betta_Symbol;
+            Text += "Gamma class: " + Alpha_Number;
+            Text += "\nGamma class: " + Betta_Symbol;
             Text += "\nGamma class: " + Gamma_Text;
             Text += "\n------------------------------";
-            return Text;
+            return Text; 
         }
     }
     class Program

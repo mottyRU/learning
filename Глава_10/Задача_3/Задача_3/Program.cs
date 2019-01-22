@@ -8,9 +8,10 @@ namespace Задача_3
 {
     class Mother
     {
-        public int[] Number = new int[5];
+        public int[] Number;
         public Mother(int[] n)
         {
+            Number = new int[n.Length];
             n.CopyTo(Number, 0);
         }
         public override string ToString()
@@ -26,9 +27,10 @@ namespace Задача_3
     }
     class Alpha : Mother
     {
-        public char[] Symbols = new char[3];
+        public char[] Symbols;
         public Alpha(int[] n, char[] m) : base(n)
         {
+            Symbols = new char[m.Length];
             m.CopyTo(Symbols, 0);
         }
         public override string ToString()
