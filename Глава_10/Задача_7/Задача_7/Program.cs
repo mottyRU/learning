@@ -8,21 +8,23 @@ namespace Задача_7
 {
     class Baza
     {
-        public string Baza_Text;
+        public string Baza_Text = "A";
         public virtual Alpha Sozdatel()
         {
+            Baza_Text = "Hello";
             Alpha A = new Alpha();
             return A;
         }
     }
     class Alpha : Baza
     {
-        public char Alpha_Symbol;
+        public char Alpha_Symbol = 'Z';
         public override Alpha Sozdatel()
         {
+            Baza_Text = "Goodbye";
             Alpha A = new Alpha();
-            
-            return 
+            Alpha B = A;
+            return B;
         }
     }
     class Program
@@ -30,7 +32,7 @@ namespace Задача_7
         static void Main(string[] args)
         {
             Baza B = new Baza();
-            B.Sozdatel();
+            Alpha A = B.Sozdatel();
         }
     }
 }
