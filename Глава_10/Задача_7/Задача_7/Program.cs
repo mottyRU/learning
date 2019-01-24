@@ -22,6 +22,7 @@ namespace Задача_7
         {
             Alpha A = new Alpha();
             A.Alpha_Symbol = Alpha_Symbol;
+            A.Baza_Text = Baza_Text;
             return A;
         }
     }
