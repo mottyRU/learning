@@ -8,11 +8,7 @@ namespace Задача_7
 {
     class Baza
     {
-        public string Baza_Text = "A";
-        public Baza(Baza A)
-        {
-            Baza_Text = A.Baza_Text;
-        }
+        public string Baza_Text;
         public virtual Alpha Sozdatel()
         {
             Alpha A = new Alpha();
@@ -21,13 +17,12 @@ namespace Задача_7
     }
     class Alpha : Baza
     {
-        public char Alpha_Symbol = 'Z';
+        public char Alpha_Symbol;
         public override Alpha Sozdatel()
         {
             Alpha A = new Alpha();
-            A.Sozdatel();
-            Alpha B = A;
-            return B;
+            A.Alpha_Symbol = Alpha_Symbol;
+            return A;
         }
     }
     class Program
@@ -42,6 +37,7 @@ namespace Задача_7
             C.Baza_Text = "Very new text";
             Console.WriteLine(A.Baza_Text + " - " + A.Alpha_Symbol);
             Console.WriteLine(C.Baza_Text + " - " + C.Alpha_Symbol);
+            Console.ReadKey();
         }
     }
 }
