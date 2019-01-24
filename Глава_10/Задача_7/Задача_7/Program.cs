@@ -36,6 +36,12 @@ namespace Задача_7
         {
             Baza B = new Baza();
             Alpha A = B.Sozdatel();
+            A.Baza_Text = "New text";
+            A.Alpha_Symbol = 'A';
+            Alpha C = A.Sozdatel();
+            C.Baza_Text = "Very new text";
+            Console.WriteLine(A.Baza_Text);
+            Console.WriteLine(C.Baza_Text);
         }
     }
 }
