@@ -40,8 +40,8 @@ namespace Задача_7
             A.Alpha_Symbol = 'A';
             Alpha C = A.Sozdatel();
             C.Baza_Text = "Very new text";
-            Console.WriteLine(A.Baza_Text);
-            Console.WriteLine(C.Baza_Text);
+            Console.WriteLine(A.Baza_Text + " - " + A.Alpha_Symbol);
+            Console.WriteLine(C.Baza_Text + " - " + C.Alpha_Symbol);
         }
     }
 }
