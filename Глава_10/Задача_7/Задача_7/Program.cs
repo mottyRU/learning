@@ -9,9 +9,12 @@ namespace Задача_7
     class Baza
     {
         public string Baza_Text = "A";
+        public Baza(Baza A)
+        {
+            Baza_Text = A.Baza_Text;
+        }
         public virtual Alpha Sozdatel()
         {
-            Baza_Text = "Hello";
             Alpha A = new Alpha();
             return A;
         }
@@ -21,8 +24,8 @@ namespace Задача_7
         public char Alpha_Symbol = 'Z';
         public override Alpha Sozdatel()
         {
-            Baza_Text = "Goodbye";
             Alpha A = new Alpha();
+            A.Sozdatel();
             Alpha B = A;
             return B;
         }
