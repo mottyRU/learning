@@ -17,88 +17,151 @@ namespace Калькулятор
         int count;
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            textBox1.TextAlign = HorizontalAlignment.Right;
+            textBox1.Text = "0";
+        }
+        public void Stiratel()
+        {
+            textBox1.Text = "0";
         }
         private void button13_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
+            //textBox1.Clear();
+            Stiratel();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "1";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "1";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "1";
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "2";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "2";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "2";
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "3";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "3";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "3";
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "4";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "4";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "4";
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "5";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "5";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "5";
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "6";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "6";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "6";
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "7";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "7";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "7";
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "8";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "8";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "8";
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "9";
+            //textBox1.Text += "9";
+            if (textBox1.Text == "0")
+            {
+                textBox1.Clear();
+                textBox1.Text += "9";
+            }
+            else if (textBox1.Text != "0") textBox1.Text += "9";
         }
         private void button0_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") textBox1.Text += "0";
-            else if (textBox1.Text == "0") textBox1.Text += "";
+            /*bool Proverka;
+            string A = ",";
+            for (int i = 0; i <= 9; i++)
+            {
+                A += i;
+            }
+            Proverka = textBox1.Text.EndsWith(A);
+            if (Proverka == true) textBox1.Text += "";
+            else if (Proverka != true) textBox1.Text += "0";*/
+            if (textBox1.Text == "0") textBox1.Text += "";
             else if (textBox1.Text != "0") textBox1.Text += "0";
+
         }
         private void button16_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") textBox1.Clear();
+            if (textBox1.Text == "") Stiratel();
             else if (textBox1.Text != "") a = double.Parse(textBox1.Text);
-            textBox1.Clear();
+            Stiratel();
             count = 1;
         } 
 
         private void button17_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") textBox1.Clear();
+            if (textBox1.Text == "") Stiratel();
             else if (textBox1.Text != "") a = double.Parse(textBox1.Text);
-            textBox1.Clear();
+            Stiratel();
             count = 2;
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") textBox1.Clear();
+            if (textBox1.Text == "") Stiratel();
             else if (textBox1.Text != "") a = double.Parse(textBox1.Text);
-            textBox1.Clear();
+            Stiratel();
             count = 3;
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") textBox1.Clear();
+            if (textBox1.Text == "") Stiratel();
             else if (textBox1.Text != "") a = double.Parse(textBox1.Text);
-            textBox1.Clear();
+            Stiratel();
             count = 4;
         }
         private void calculate()
         {
-            if (textBox1.Text == "") textBox1.Clear();
+            if (textBox1.Text == "") Stiratel();
             switch (count)
             {
 
@@ -113,7 +176,7 @@ namespace Калькулятор
                 case 3:
                     b = a * double.Parse(textBox1.Text);
                     textBox1.Text = b.ToString();
-                    break;
+                    break; 
                 case 4:
                     b = a / double.Parse(textBox1.Text);
                     if (double.Parse(textBox1.Text) == 0) textBox1.Text = "Деление на 0 невозможно";
@@ -135,7 +198,8 @@ namespace Калькулятор
                 int NumberLength = textBox1.Text.Length;
                 string a = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
                 textBox1.Text = a;
-            }
+                if (a == "") Stiratel(); 
+            } 
             catch
             {
                 textBox1.Text = "";
@@ -146,8 +210,15 @@ namespace Калькулятор
         {
             string  A = textBox1.Text;
             if (A == "") textBox1.Clear(); 
-            else if (A != "") textBox1.Text += ",";
-
+            else if (A != "")
+            {
+                string Z = ",";
+                bool Proverka;
+                Proverka = textBox1.Text.Contains(Z);
+                if (Proverka == true) textBox1.Text += "";
+                else if (Proverka != true) textBox1.Text += ",";
+            }
+            
         }
 
         private void button15_Click(object sender, EventArgs e)

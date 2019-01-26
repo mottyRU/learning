@@ -34,7 +34,7 @@ namespace Задача_5
             int[] Hranitel = IndexSearch(Text, ForSearch);
             for (int i = 0; i < Hranitel.Length; i++)
             {
-                Console.WriteLine(Hranitel);
+                Console.WriteLine(Hranitel[i]);
             }
             Console.ReadKey();
         }

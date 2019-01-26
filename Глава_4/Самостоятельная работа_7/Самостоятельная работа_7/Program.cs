@@ -10,24 +10,24 @@ namespace Самостоятельная_работа_7
     {
         static void Main(string[] args)
         {
-            int size = 5;
+            int size = 10;
             char[] symb = new char[size];
             symb[0] = 'A';
             Console.WriteLine("Massive:");
             for (int i = 0; i < symb.Length-1; i++)
             {
-                symb[i + 1] =(char) (symb[i] + 1);
+                symb[i + 1] = (char) (symb[i] + 1);
             }
             foreach (int s in symb)
             {
                 Console.Write((char) s + " ");
             }
             char NewSymb;
-            for (int i = 0; i < symb.Length-1; i++)
+            for (int i = 0; i < symb.Length/2; i++)
             {
                 NewSymb = symb[i];
                 symb[i] = symb[symb.Length - 1 - i];
-                symb[symb.Length - 1] = NewSymb;
+                symb[symb.Length - 1 - i] = NewSymb;
             }
             Console.WriteLine();
             Console.WriteLine("New Massive:");

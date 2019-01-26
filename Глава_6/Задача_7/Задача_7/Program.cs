@@ -26,12 +26,12 @@ namespace Задача_7
             }
             else
             {
-                Text = Convert.ToString(n);
+                Text = new string (n);
             }
         }
         public void Show()
         {
-            Console.WriteLine("" + Text+" " + Symbol);
+            Console.WriteLine("" + Text +" " + Symbol);
         }
     }
     class Program

@@ -31,7 +31,7 @@ namespace Задача_1
             MyClass B = new MyClass();
             B.Prisvoit(Int32.Parse(Console.ReadLine()));
             B.Symbol();
-            B.SymbolAndNumber();
+            B.SymbolAndNumber()
             Console.ReadKey();
         }
     }

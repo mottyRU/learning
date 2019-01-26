@@ -24,7 +24,6 @@ namespace Самостоятельная_работа_9
             int row = rnd.Next(numb.GetLength(0));
             int col = rnd.Next(numb.GetLength(1));
             Console.WriteLine("Delete {0} row and {1} col", row, col);
-            Console.ReadKey();
             int A, B;
             int[,] NewMassive = new int [numb.GetLength(0)-1, numb.GetLength(1)-1];
             for (int i = 0; i<NewMassive.GetLength(0); i++)

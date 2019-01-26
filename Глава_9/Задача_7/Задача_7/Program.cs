@@ -18,7 +18,7 @@ namespace Задача_7
             Priemnik = new uint[Z.Length];
             for (int i = 0; i < Z.Length; i++)
             {
-                Priemnik[i] = Convert.ToUInt32(Z[i]);
+                Priemnik[i] = (uint) Char.GetNumericValue(Z[i]);
                 Console.Write("|" + Priemnik[i]);
             }
             Console.WriteLine("|");
@@ -36,7 +36,7 @@ namespace Задача_7
         static void Main(string[] args)
         {
             BuClass A = new BuClass(150);
-            Console.WriteLine(A[7]);
+            Console.WriteLine(A[5]);
             Console.ReadKey();
         }
     }

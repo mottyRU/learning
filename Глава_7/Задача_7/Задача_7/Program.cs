@@ -21,7 +21,7 @@ namespace Задача_7
         static void Main()
         {
             string Text = "Hello_Wild_World";
-            int a = 1, b = 5;
+            int a = 2, b = 5;
             Console.WriteLine("Result is: {0}", MethodSubstring(Text, a, b));
             Console.ReadKey();
         }

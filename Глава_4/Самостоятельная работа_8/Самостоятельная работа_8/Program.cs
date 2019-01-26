@@ -41,6 +41,7 @@ namespace Самостоятельная_работа_8
                 }
                 Console.WriteLine();
             }
+
             Console.ReadKey();
         }
     }

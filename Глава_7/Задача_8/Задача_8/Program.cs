@@ -15,7 +15,7 @@ namespace Задача_8
         }
         public override string ToString()
         {
-            return TextPole;
+            return TextPole.ToString();
         }
     }
     class Program

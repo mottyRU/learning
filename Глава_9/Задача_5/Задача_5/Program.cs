@@ -8,23 +8,23 @@ namespace Задача_5
 {
     class NewClass
     {
-        public static int Last = 2;
+        public static int Step = 2;
         public static int Prev = 1;
         public static int NechentZnachen
         {
             get
             {
                 int Res = Prev;
-                Prev = Last + Prev;
+                Prev = Step + Prev;
                 return Res;
             }
             set
             {
                 Prev = 1;
-                Last = 2;
-                for (int i = 2; i <=value; i++)
+                Step = 2;
+                for (int i = 2; i <= value; i++)
                 {
-                    Prev = Last + Prev;
+                    Prev = Step + Prev;
                 }
             }
         }

@@ -28,8 +28,8 @@ namespace Задача_8
         static void Main(string[] args)
         {
             CatClass A = new CatClass();
-            A[0] = 5;
-            A.ViewResult();
+            //A[0] = 5;
+            //A.ViewResult();
             A[1] = 56;
             A.ViewResult();
             A[2] = 57;

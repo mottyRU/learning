@@ -37,9 +37,9 @@ namespace Задача_6
         static void Main(string[] args)
         {
             MyyClass A = new MyyClass(5, 10);
-            Console.WriteLine(A[1]);
-            A[1] = 10;
-            Console.WriteLine(A[1]);
+            Console.WriteLine(A[11]);
+            A[11] = 99;
+            Console.WriteLine(A[11]);
             
             Console.ReadKey();
         }

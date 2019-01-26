@@ -20,9 +20,7 @@ namespace Задача_2
             }
             set
             {
-                value = 99;
                 Numbers[Index-1] = value;
-
             }
         }
     }
@@ -34,7 +32,7 @@ namespace Задача_2
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);
-            A.CBOiCTBO = 99;
+            A.CBOiCTBO = 10;
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);
             Console.WriteLine("Значение элемента массива: " + A.CBOiCTBO);

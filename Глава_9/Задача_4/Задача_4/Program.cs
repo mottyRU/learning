@@ -23,8 +23,7 @@ namespace Задача_4
                 else Number = value;
                 //uint A = Number % 8;
                 //uint B = (Number / 8) % 8;
-                string A = Convert.ToString(Number, 8);
-                Text = "Number =  " +  A;
+                Text = Convert.ToString(Number, 8);
             }
         }
         public override string ToString()

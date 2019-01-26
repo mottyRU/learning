@@ -15,6 +15,7 @@ namespace Задача_5
         }
         public void Prisvoit(int n)
         {
+            Console.WriteLine(n);
             if (n > 100)
             {
                 Number = 100;
@@ -23,6 +24,7 @@ namespace Задача_5
             {
                 Number = n;
             }
+
         }
         public void Show()
         {

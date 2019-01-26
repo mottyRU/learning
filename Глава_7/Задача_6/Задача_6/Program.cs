@@ -16,7 +16,6 @@ namespace Задача_6
             {
                 if (s == ','| s == '.'|s == ' '| s == '-') continue;
                 if (!Hranitel_1.Contains(s)) Hranitel_1 += s;
-
             }
             Symbols = Hranitel_1.ToCharArray();
             Array.Sort(Symbols);

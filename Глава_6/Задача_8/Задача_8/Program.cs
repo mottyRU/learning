@@ -11,13 +11,12 @@ namespace Задача_8
         private static int Number = 0;
         public static void Show()
         {
-            Console.WriteLine(Number);
-            Number++;
+            Console.WriteLine(Number++);
         }
     }
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             MyClass.Show();
             MyClass.Show();

@@ -31,7 +31,7 @@ namespace Задача_1
         {
             MyNewClass obj1 = new MyNewClass();
             Console.WriteLine("Значение свойства: " + obj1.Symbols);
-            obj1.Symbols = '!';
+            obj1.Symbols = 'C';
             Console.WriteLine("Значение свойства: " + obj1.Symbols);
             Console.ReadKey();
         }

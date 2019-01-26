@@ -10,20 +10,12 @@ namespace Задача_3
     {
         public static bool Compare(string n, string m)
         {
-            if (n.Length == m.Length)
+            if (n.Length != m.Length) return false;
+            for (int i = 0; i < n.Length; i++)
             {
-                for (int i = 0; i < n.Length; i++)
-                {
-                    int A = Math.Abs(Convert.ToSByte(n[i] - m[i]));
-                    if (A > 1) return false;
-                    else
-                    {
-                        Console.WriteLine(Math.Abs(Convert.ToSByte(n[i] - m[i])));
-                    }
-                }
-                return true;
+                if (Math.Abs(Convert.ToSByte(n[i] - m[i])) > 1) return false;
             }
-            else return false;
+            return true;
         }
         static void Main()
         {
