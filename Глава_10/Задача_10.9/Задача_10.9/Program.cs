@@ -66,14 +66,14 @@ namespace Задача_10._9
     {
         static void Main(string[] args)
         {
-            //Alpha A = new Alpha();
-            //Console.WriteLine(A.TextReturn);
-            //A.TextReturn = "Goodbye";
-            //Console.WriteLine(A);
-            Bravo B = new Bravo();
-            Console.WriteLine(B.TextReturn);
-            B.TextReturn = "Hranitel Vreditel";
-            Console.WriteLine(B);
+            Alpha A = new Alpha();
+            Console.WriteLine(A.TextReturn);
+            A.TextReturn = "Goodbye";
+            Console.WriteLine(A);
+            //Bravo B = new Bravo();
+            //Console.WriteLine(B.TextReturn);
+            //B.TextReturn = "Hranitel Vreditel";
+            //Console.WriteLine(B);
             Console.ReadKey();
         }
     }
