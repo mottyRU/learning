@@ -282,38 +282,17 @@ namespace Калькулятор_простой
             {
                 a = Convert.ToDouble(textBox1.Text);
             }
-            else if (a != 0 & Equally == false & Plus == true)
+            else if (a != 0 & Equally == false)
             {
-                a += Convert.ToDouble(textBox1.Text);
+                if (Plus == true) a += Convert.ToDouble(textBox1.Text);
+                else if (Minus == true) a -= Convert.ToDouble(textBox1.Text);
+                else if (Multiply == true) a *= Convert.ToDouble(textBox1.Text);
+                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);
                 b = Convert.ToDouble(textBox1.Text);
                 //Hranitel = a;
                 textBox1.Text = a.ToString();
                 a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false & Minus == true)
-            {
-                a -= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                //Hranitel = a;
-                textBox1.Text = a.ToString();
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false & Multiply == true)
-            {
-                a *= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                //Hranitel = a;
-                textBox1.Text = a.ToString();
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false & Division == true)
-            {
-                a /= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                //Hranitel = a;
-                textBox1.Text = a.ToString();
-                a = Convert.ToDouble(textBox1.Text);
-            }
+            }            
             else if (a != 0 & b != 0)
             {
                 textBox1.Text = Calculator();
@@ -383,7 +362,7 @@ namespace Калькулятор_простой
                 textBox1.Clear();
                 a += b;
                 textBox1.Text = a.ToString();
-                Hranitel = a;
+                //Hranitel = a;
                 a = Convert.ToDouble(textBox1.Text);
             }
             if (Minus == true)
@@ -392,7 +371,7 @@ namespace Калькулятор_простой
                 textBox1.Clear();
                 a -= b;
                 textBox1.Text = a.ToString();
-                Hranitel = a;
+                //Hranitel = a;
                 a = Convert.ToDouble(textBox1.Text);
             }
             if (Multiply == true)
@@ -401,7 +380,7 @@ namespace Калькулятор_простой
                 textBox1.Clear();
                 a *= b;
                 textBox1.Text = a.ToString();
-                Hranitel = a;
+                //Hranitel = a;
                 a = Convert.ToDouble(textBox1.Text);
             }
             if (Division == true)
@@ -410,7 +389,7 @@ namespace Калькулятор_простой
                 textBox1.Clear();
                 a /= b;
                 textBox1.Text = a.ToString();
-                Hranitel = a;
+                //Hranitel = a;
                 a = Convert.ToDouble(textBox1.Text);
             }
             if (Percent == true)
