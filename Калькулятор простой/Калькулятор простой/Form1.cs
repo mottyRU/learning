@@ -47,7 +47,6 @@ namespace Калькулятор_простой
             TextValueZero();
             a = 0;
             b = 0;
-
             AllBoolFalse();
         }
         private void button18_Click(object sender, EventArgs e)
@@ -70,7 +69,6 @@ namespace Калькулятор_простой
             {
                 Txt = "0";
             }
-            WaitInfo = false;
         }
         //------------------------------кнопки с цифрами:
         public string NumberButton()
@@ -142,7 +140,6 @@ namespace Калькулятор_простой
             //кнопка 1
             count = 1;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -150,7 +147,6 @@ namespace Калькулятор_простой
             //кнопка 2
             count = 2;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -158,7 +154,6 @@ namespace Калькулятор_простой
             //кнопка 3
             count = 3;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -166,7 +161,6 @@ namespace Калькулятор_простой
             //кнопка 4
             count = 4;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -174,7 +168,6 @@ namespace Калькулятор_простой
             //кнопка 5
             count = 5;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -182,7 +175,6 @@ namespace Калькулятор_простой
             //кнопка 6
             count = 6;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -190,7 +182,6 @@ namespace Калькулятор_простой
             //кнопка 7
             count = 7;
             ButtonClick();
-            WaitInfo = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -198,7 +189,6 @@ namespace Калькулятор_простой
             //кнопка 8
             count = 8;
             ButtonClick();
-            WaitInfo = false;
         }
 
 
@@ -207,7 +197,6 @@ namespace Калькулятор_простой
             //кнопка 9
             count = 9;
             ButtonClick();
-            WaitInfo = false;
         }
 
         //-------------------------------------операции с числами:
@@ -226,14 +215,6 @@ namespace Калькулятор_простой
             else if (a != 0 & Equally == false)
             {
                 Calculator();
-                /*if (Plus == true) a += Convert.ToDouble(textBox1.Text);
-                else if (Minus == true) a -= Convert.ToDouble(textBox1.Text);
-                else if (Multiply == true) a *= Convert.ToDouble(textBox1.Text);
-                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                //Hranitel = a;
-                textBox1.Text = a.ToString();
-                a = Convert.ToDouble(textBox1.Text);*/
             }            
             else if (a != 0 & b != 0)
             {
@@ -243,7 +224,7 @@ namespace Калькулятор_простой
         private void button11_Click(object sender, EventArgs e)
         {
             //кнопка ПЛЮС:
-            if (WaitInfo == true) WaitInfo = false;
+            if (WaitInfo == true) return;
             Plus = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -251,26 +232,33 @@ namespace Калькулятор_простой
             Minus = false;
             Multiply = false;
             Division = false;
+            WaitInfo = true;
         }
         
         private void button12_Click(object sender, EventArgs e)
         {
             //кнопка МИНУС:
-            WaitInfo = true;
+            if (WaitInfo == true & Plus == true | Multiply == true | Division == true)
+            {
+                WaitInfo = false;
+                a = 0;
+            }                
+            else if (WaitInfo == true) return;
             Minus = true;
             ButtonIndicate = true;
-            Plus_Minus_Multiply_Division();
             Plus = false;
             //Minus = false;
             Multiply = false;
-            Division = false;
+            Division = false;            
+            Plus_Minus_Multiply_Division();
+            WaitInfo = true;
 
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             //кнопка УМНОЖИТЬ:
-            WaitInfo = true;
+            if (WaitInfo == true) return;
             Multiply = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -278,12 +266,13 @@ namespace Калькулятор_простой
             Minus = false;
             //Multiply = false;
             Division = false;
+            WaitInfo = true;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             //кнопка РАЗДЕЛИТЬ:
-            WaitInfo = true;
+            if (WaitInfo == true) return;
             Division = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -291,6 +280,7 @@ namespace Калькулятор_простой
             Minus = false;
             Multiply = false;
             //Division = false;
+            WaitInfo = true;
         }
 
         private void button17_Click(object sender, EventArgs e)
