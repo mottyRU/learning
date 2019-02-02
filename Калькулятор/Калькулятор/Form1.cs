@@ -12,24 +12,25 @@ namespace Калькулятор
 {
     public partial class Form1 : Form
     {
-        double a, b , CalcData;
         int count;
+        double a, b, CalcData;
         bool Equally = false; //для кнопки РАВНО
-        bool Plus, Minus, Multiply, Division; //для кнопок матем.операций
+        bool Plus, Minus, Multiply, Division, ButtonIndicate; //для кнопок матем.операций
         public Form1()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.Text = "0";
         }
         public void Stiratel()
         {
             textBox1.Text = "0";
-            Equally = false;
+            //Equally = false;
         }
         private void button13_Click(object sender, EventArgs e)
         {
             //кнопка С
+            //textBox1.Clear();
             Stiratel();
             a = 0;
             b = 0;
@@ -38,124 +39,187 @@ namespace Калькулятор
             Minus = false;
             Multiply = false;
             Division = false;
+            ButtonIndicate = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
             //кнопка 1
-            if (textBox1.Text == "0") textBox1.Clear();
+            if (textBox1.Text == "0")
+            {
+                if (ButtonIndicate == true)
+                {
+                    ButtonIndicate = false;
+                    textBox1.Clear();
+                    textBox1.Text += "1";
+                }
+                else
+                {
+                    textBox1.Clear();
+                    textBox1.Text += "1";
+                }
+            }
+            else textBox1.Text += "1";
+
+            /*if (textBox1.Text == "0") textBox1.Clear();
             else if (Equally | Plus | Minus | Multiply | Division == true)
             {
                 Stiratel();
                 textBox1.Clear();
             }
-            textBox1.Text += "1";
+            textBox1.Text += "1";*/
         }
         private void button2_Click(object sender, EventArgs e)
         {
             //кнопка 2
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "2";
             }
-            textBox1.Text += "2";
+            else
+            {
+                textBox1.Text += "2";
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
             //кнопка 3
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "3";
             }
-            textBox1.Text += "3";
+            else
+            {
+                textBox1.Text += "3";
+            }
         }
         private void button4_Click(object sender, EventArgs e)
         {
             //кнопка 4
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "4";
             }
-            textBox1.Text += "4";
+            else
+            {
+                textBox1.Text += "4";
+            }
         }
         private void button5_Click(object sender, EventArgs e)
         {
             //кнопка 5
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "5";
             }
-            textBox1.Text += "5";
+            else
+            {
+                textBox1.Text += "5";
+            }
         }
         private void button6_Click(object sender, EventArgs e)
         {
             //кнопка 6
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "6";
             }
-            textBox1.Text += "6";
+            else
+            {
+                textBox1.Text += "6";
+            }
         }
         private void button7_Click(object sender, EventArgs e)
         {
             //кнопка 7
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "7";
             }
-            textBox1.Text += "7";
+            else
+            {
+                textBox1.Text += "7";
+            }
         }
         private void button8_Click(object sender, EventArgs e)
         {
             //кнопка 8
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "8";
             }
-            textBox1.Text += "8";
+            else
+            {
+                textBox1.Text += "8";
+            }
         }
         private void button9_Click(object sender, EventArgs e)
         {
             //кнопка 9
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "9";
             }
-            textBox1.Text += "9";
+            else
+            {
+                textBox1.Text += "9";
+            }
         }
         private void button0_Click(object sender, EventArgs e)
         {
             //кнопка 0
-            if (textBox1.Text == "0") textBox1.Clear();
-            else if (Equally | Plus | Minus | Multiply | Division == true)
+            if (ButtonIndicate == true)
             {
-                Stiratel();
+                ButtonIndicate = false;
                 textBox1.Clear();
+                textBox1.Text += "0";
             }
-            textBox1.Text += "0";
+            else
+            {
+                textBox1.Text += "0";
+            }
         }
         private void button16_Click(object sender, EventArgs e)
         {
             //кнопа ПЛЮС
-            a = Convert.ToDouble(textBox1.Text);
-            //count = 1;
+            ButtonIndicate = true;
+            if (Equally == true)
+            {
+                b = Convert.ToDouble(textBox1.Text);
+                textBox1.Text = b.ToString();
+            }
+            else if (a == 0 & Equally == false)
+            {
+                a = Convert.ToDouble(textBox1.Text);
+            }
+            else if (a != 0 & Equally == false)
+            {
+                a += Convert.ToDouble(textBox1.Text);
+                b = Convert.ToDouble(textBox1.Text);
+                CalcData = a;
+                textBox1.Text = CalcData.ToString();
+            }
+            else if (a != 0 & b != 0)
+            {
+                textBox1.Text = calculate();
+            }
             Plus = true;
-        } 
+        }
 
         private void button17_Click(object sender, EventArgs e)
         {
@@ -190,51 +254,21 @@ namespace Калькулятор
         private void button12_Click(object sender, EventArgs e)
         {
             //кнопа равно
-            b = Convert.ToDouble(textBox1.Text);
+            Equally = true;            
+            textBox1.Text = a.ToString();            
+            
+        }
+        private string calculate()
+        {
             if (Plus == true)
             {
-                CalcData += (a + b);
-                textBox1.Text = CalcData.ToString();
+                b = Convert.ToDouble(textBox1.Text);
+                a += b;
+                textBox1.Text = a.ToString();
+                CalcData = a;
             }
-            else if (Minus == true) count = 2;
-            else if (Multiply == true) count = 3;
-            else if (Division == true) count = 4;
-            //calculate();
-            if (textBox1.Text != "0") Equally = true;
-            else Equally = false;
-            Plus = false;
-            Minus = false;
-            Multiply = false;
-            Division = false;
-        }
-        private void calculate()
-        {
-            if (textBox1.Text == "") Stiratel();
-            switch (count)
-            {
-                case 1:
-                    a += b;
-                    CalcData += a;
-                    textBox1.Text = a.ToString();
-                    break;
-                case 2:
-                    CalcData = a - b;
-                    textBox1.Text = CalcData.ToString();
-                    break;
-                case 3:
-                    CalcData = a * b;
-                    textBox1.Text = CalcData.ToString();
-                    break; 
-                case 4:
-                    CalcData = a / b;
-                    textBox1.Text = CalcData.ToString();
-                    break;
-                case 5:
-                    b = Convert.ToDouble(textBox1.Text);
-                    a = a * 100 / b;
-                    textBox1.Text = a.ToString();
-                    break;
-            }
+            Equally = true;
+            return a.ToString();
         }
         private void button14_Click(object sender, EventArgs e)
         {
@@ -301,7 +335,7 @@ namespace Калькулятор
             {
                 Z += "";
                 textBox1.Text = Z;
-                
+
             }
         }
 
@@ -311,8 +345,9 @@ namespace Калькулятор
         {
             //кнопка +/-
             if (textBox1.Text[0] == '-') textBox1.Text = textBox1.Text.Remove(0, 1);
-            else textBox1.Text = '-' + textBox1.Text;            
+            else textBox1.Text = '-' + textBox1.Text;
         }
+
         private void button29_Click(object sender, EventArgs e)
         {
             //кнопка MemorySave
