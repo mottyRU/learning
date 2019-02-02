@@ -362,16 +362,16 @@ namespace Калькулятор_простой
             else if (Minus == true) a -= b;
             else if (Multiply == true) a *= b;
             else if (Division == true) a /= b;
-            textBox1.Text = a.ToString();
-            //Hranitel = a;
-            a = Convert.ToDouble(textBox1.Text);
-            if (Percent == true)
+            else if (Percent == true)
             {
                 b = Convert.ToDouble(textBox1.Text);
                 a = a * 100 / b;
                 textBox1.Text = a.ToString();
                 Percent = false;
             }
+            textBox1.Text = a.ToString();
+            //Hranitel = a;
+            a = Convert.ToDouble(textBox1.Text);
             b = 0;
             Hranitel = 0;
             Equally = true;
