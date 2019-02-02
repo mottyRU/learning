@@ -15,7 +15,7 @@ namespace Калькулятор_простой
         int count;
         double a, b, MemoryDoub;
         bool Equally = false;
-        bool Plus, Minus, Multiply, Division, ButtonIndicate, Percent, TextBOX;
+        bool Plus, Minus, Multiply, Division, ButtonIndicate, Percent;
         bool WaitInfo = true;
         public Form1()
         {
@@ -27,7 +27,6 @@ namespace Калькулятор_простой
         public void TextValueZero()
         {
             textBox1.Text = "0";
-            TextBOX = true;
         }
         public void AllBoolFalse()
         {
@@ -43,10 +42,10 @@ namespace Калькулятор_простой
         private void button16_Click(object sender, EventArgs e)
         {
             //кнопка C
-            //textBox1.Clear();
             TextValueZero();
             a = 0;
             b = 0;
+
             AllBoolFalse();
         }
         private void button18_Click(object sender, EventArgs e)
@@ -69,6 +68,7 @@ namespace Калькулятор_простой
             {
                 Txt = "0";
             }
+            WaitInfo = false;
         }
         //------------------------------кнопки с цифрами:
         public string NumberButton()
@@ -202,8 +202,8 @@ namespace Калькулятор_простой
         //-------------------------------------операции с числами:
         public void Plus_Minus_Multiply_Division()
         {
-            
-            if (Equally == true)
+            if (WaitInfo == true) return;
+            else if (Equally == true)
             {
                 b = Convert.ToDouble(textBox1.Text);
                 textBox1.Text = b.ToString();
@@ -220,11 +220,11 @@ namespace Калькулятор_простой
             {
                 Calculator();
             }
+            WaitInfo = true;
         }
         private void button11_Click(object sender, EventArgs e)
         {
             //кнопка ПЛЮС:
-            if (WaitInfo == true) return;
             Plus = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -232,33 +232,24 @@ namespace Калькулятор_простой
             Minus = false;
             Multiply = false;
             Division = false;
-            WaitInfo = true;
         }
         
         private void button12_Click(object sender, EventArgs e)
         {
             //кнопка МИНУС:
-            if (WaitInfo == true & Plus == true | Multiply == true | Division == true)
-            {
-                WaitInfo = false;
-                a = 0;
-            }                
-            else if (WaitInfo == true) return;
             Minus = true;
             ButtonIndicate = true;
+            Plus_Minus_Multiply_Division();
             Plus = false;
             //Minus = false;
             Multiply = false;
-            Division = false;            
-            Plus_Minus_Multiply_Division();
-            WaitInfo = true;
+            Division = false;
 
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             //кнопка УМНОЖИТЬ:
-            if (WaitInfo == true) return;
             Multiply = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -266,13 +257,11 @@ namespace Калькулятор_простой
             Minus = false;
             //Multiply = false;
             Division = false;
-            WaitInfo = true;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             //кнопка РАЗДЕЛИТЬ:
-            if (WaitInfo == true) return;
             Division = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -280,13 +269,11 @@ namespace Калькулятор_простой
             Minus = false;
             Multiply = false;
             //Division = false;
-            WaitInfo = true;
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             //кнопка равно:
-            //Equally = true;
             Calculator();
             Equally = true;
         }
@@ -306,7 +293,6 @@ namespace Калькулятор_простой
                 Percent = false;
             }
             textBox1.Text = a.ToString();
-            //Hranitel = a;
             a = Convert.ToDouble(textBox1.Text);
             b = 0;
             textBox1.Text = a.ToString();
