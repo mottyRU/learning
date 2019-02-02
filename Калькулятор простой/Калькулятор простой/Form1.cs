@@ -364,9 +364,7 @@ namespace Калькулятор_простой
             else if (Division == true) a /= b;
             else if (Percent == true)
             {
-                b = Convert.ToDouble(textBox1.Text);
                 a = a * 100 / b;
-                textBox1.Text = a.ToString();
                 Percent = false;
             }
             textBox1.Text = a.ToString();
