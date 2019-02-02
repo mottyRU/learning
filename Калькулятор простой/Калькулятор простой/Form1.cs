@@ -356,42 +356,15 @@ namespace Калькулятор_простой
 
         public string Calculator()
         {
-            if (Plus == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Clear();
-                a += b;
-                textBox1.Text = a.ToString();
-                //Hranitel = a;
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            if (Minus == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Clear();
-                a -= b;
-                textBox1.Text = a.ToString();
-                //Hranitel = a;
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            if (Multiply == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Clear();
-                a *= b;
-                textBox1.Text = a.ToString();
-                //Hranitel = a;
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            if (Division == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Clear();
-                a /= b;
-                textBox1.Text = a.ToString();
-                //Hranitel = a;
-                a = Convert.ToDouble(textBox1.Text);
-            }
+            b = Convert.ToDouble(textBox1.Text);
+            textBox1.Clear();
+            if (Plus == true) a += b;
+            else if (Minus == true) a -= b;
+            else if (Multiply == true) a *= b;
+            else if (Division == true) a /= b;
+            textBox1.Text = a.ToString();
+            //Hranitel = a;
+            a = Convert.ToDouble(textBox1.Text);
             if (Percent == true)
             {
                 b = Convert.ToDouble(textBox1.Text);
