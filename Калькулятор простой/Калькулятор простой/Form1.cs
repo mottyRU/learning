@@ -271,11 +271,8 @@ namespace Калькулятор_простой
         }
 
         //-------------------------------------операции с числами:
-        private void button11_Click(object sender, EventArgs e)
+        public void Plus_Minus_Multiply_Division()
         {
-            //кнопка ПЛЮС:
-            ButtonIndicate = true;
-
             if (Equally == true)
             {
                 b = Convert.ToDouble(textBox1.Text);
@@ -285,91 +282,74 @@ namespace Калькулятор_простой
             {
                 a = Convert.ToDouble(textBox1.Text);
             }
-            else if (a != 0 & Equally == false)
+            else if (a != 0 & Equally == false & Plus == true)
             {
                 a += Convert.ToDouble(textBox1.Text);
                 b = Convert.ToDouble(textBox1.Text);
-                Hranitel = a;
-                textBox1.Text = Hranitel.ToString();
+                //Hranitel = a;
+                textBox1.Text = a.ToString();
+                a = Convert.ToDouble(textBox1.Text);
+            }
+            else if (a != 0 & Equally == false & Minus == true)
+            {
+                a -= Convert.ToDouble(textBox1.Text);
+                b = Convert.ToDouble(textBox1.Text);
+                //Hranitel = a;
+                textBox1.Text = a.ToString();
+                a = Convert.ToDouble(textBox1.Text);
+            }
+            else if (a != 0 & Equally == false & Multiply == true)
+            {
+                a *= Convert.ToDouble(textBox1.Text);
+                b = Convert.ToDouble(textBox1.Text);
+                //Hranitel = a;
+                textBox1.Text = a.ToString();
+                a = Convert.ToDouble(textBox1.Text);
+            }
+            else if (a != 0 & Equally == false & Division == true)
+            {
+                a /= Convert.ToDouble(textBox1.Text);
+                b = Convert.ToDouble(textBox1.Text);
+                //Hranitel = a;
+                textBox1.Text = a.ToString();
+                a = Convert.ToDouble(textBox1.Text);
             }
             else if (a != 0 & b != 0)
             {
-                //Hranitel += Convert.ToDouble(textBox1.Text);
-                //textBox1.Text = Hranitel.ToString();
                 textBox1.Text = Calculator();
             }
-            /*else if (a != 0 & b != 0 & Equally == true)
-            {
-                Hranitel += Convert.ToDouble(textBox1.Text) + a + b;
-                textBox1.Text = Hranitel.ToString();
-            }*/
-           Plus = true;
-           //Plus = false;
-           Minus = false;
-           Multiply = false;
-           Division = false;
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            //кнопка ПЛЮС:
+            Plus = true;
+            ButtonIndicate = true;
+            Plus_Minus_Multiply_Division();
+            //Plus = false;
+            Minus = false;
+            Multiply = false;
+            Division = false;
         }
         
         private void button12_Click(object sender, EventArgs e)
         {
             //кнопка МИНУС:
-            ButtonIndicate = true;
-            if (Equally == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Text = b.ToString();
-            }
-            else if (a == 0 & Equally == false)
-            {
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false)
-            {
-                a -= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                Hranitel = a;
-                textBox1.Text = Hranitel.ToString();
-            }
-            else if (a != 0 & b != 0)
-            {
-                //Hranitel += Convert.ToDouble(textBox1.Text);
-                //textBox1.Text = Hranitel.ToString();
-                textBox1.Text = Calculator();
-            }
             Minus = true;
+            ButtonIndicate = true;
+            Plus_Minus_Multiply_Division();
             Plus = false;
             //Minus = false;
             Multiply = false;
             Division = false;
+
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             //кнопка УМНОЖИТЬ:
-            ButtonIndicate = true;
-            if (Equally == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Text = b.ToString();
-            }
-            else if (a == 0 & Equally == false)
-            {
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false)
-            {
-                a *= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                Hranitel = a;
-                textBox1.Text = Hranitel.ToString();
-            }
-            else if (a != 0 & b != 0)
-            {
-                //Hranitel += Convert.ToDouble(textBox1.Text);
-                //textBox1.Text = Hranitel.ToString();
-                textBox1.Text = Calculator();
-            }
             Multiply = true;
+            ButtonIndicate = true;
+            Plus_Minus_Multiply_Division();
             Plus = false;
             Minus = false;
             //Multiply = false;
@@ -379,30 +359,9 @@ namespace Калькулятор_простой
         private void button14_Click(object sender, EventArgs e)
         {
             //кнопка РАЗДЕЛИТЬ:
-            ButtonIndicate = true;
-            if (Equally == true)
-            {
-                b = Convert.ToDouble(textBox1.Text);
-                textBox1.Text = b.ToString();
-            }
-            else if (a == 0 & Equally == false)
-            {
-                a = Convert.ToDouble(textBox1.Text);
-            }
-            else if (a != 0 & Equally == false | Plus == true | Minus == true | Multiply == true)
-            {
-                a /= Convert.ToDouble(textBox1.Text);
-                b = Convert.ToDouble(textBox1.Text);
-                Hranitel = a;
-                textBox1.Text = Hranitel.ToString();
-            }
-            else if (a != 0 & b != 0)
-            {
-                //Hranitel += Convert.ToDouble(textBox1.Text);
-                //textBox1.Text = Hranitel.ToString();
-                textBox1.Text = Calculator();
-            }
             Division = true;
+            ButtonIndicate = true;
+            Plus_Minus_Multiply_Division();
             Plus = false;
             Minus = false;
             Multiply = false;
@@ -414,8 +373,6 @@ namespace Калькулятор_простой
             //кнопка равно:
             //Equally = true;
             textBox1.Text = Calculator();
-
-
         }
 
         public string Calculator()
@@ -427,6 +384,7 @@ namespace Калькулятор_простой
                 a += b;
                 textBox1.Text = a.ToString();
                 Hranitel = a;
+                a = Convert.ToDouble(textBox1.Text);
             }
             if (Minus == true)
             {
@@ -435,6 +393,7 @@ namespace Калькулятор_простой
                 a -= b;
                 textBox1.Text = a.ToString();
                 Hranitel = a;
+                a = Convert.ToDouble(textBox1.Text);
             }
             if (Multiply == true)
             {
@@ -443,6 +402,7 @@ namespace Калькулятор_простой
                 a *= b;
                 textBox1.Text = a.ToString();
                 Hranitel = a;
+                a = Convert.ToDouble(textBox1.Text);
             }
             if (Division == true)
             {
@@ -451,6 +411,7 @@ namespace Калькулятор_простой
                 a /= b;
                 textBox1.Text = a.ToString();
                 Hranitel = a;
+                a = Convert.ToDouble(textBox1.Text);
             }
             if (Percent == true)
             {
