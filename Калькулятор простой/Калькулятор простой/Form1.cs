@@ -20,6 +20,7 @@ namespace Калькулятор_простой
             InitializeComponent();
             textBox1.TextAlign = HorizontalAlignment.Right;
             TextValueZero();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         public void TextValueZero()
         {
@@ -268,8 +269,6 @@ namespace Калькулятор_простой
                 textBox1.Text += "9";
             }
         }
-
-
 
         //-------------------------------------операции с числами:
         private void button11_Click(object sender, EventArgs e)
