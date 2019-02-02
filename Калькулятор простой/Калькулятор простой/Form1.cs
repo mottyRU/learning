@@ -12,9 +12,11 @@ namespace Калькулятор_простой
 {
     public partial class Form1 : Form
     {
+        int count;
         double a, b, MemoryDoub;
         bool Equally = false;
         bool Plus, Minus, Multiply, Division, ButtonIndicate, Percent, TextBOX;
+        bool WaitInfo = true;
         public Form1()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Калькулятор_простой
             Division = false;
             ButtonIndicate = false;
             Percent = false;
+            WaitInfo = true;
         }
         private void button16_Click(object sender, EventArgs e)
         {
@@ -67,212 +70,150 @@ namespace Калькулятор_простой
             {
                 Txt = "0";
             }
+            WaitInfo = false;
         }
         //------------------------------кнопки с цифрами:
-        private void button10_Click(object sender, EventArgs e)
+        public string NumberButton()
         {
-            //кнопка 0
+            string Txt = "";
+            switch (count)
+            {
+                case 0:
+                    Txt += "0";
+                    break;
+                case 1:
+                    Txt += "1";
+                    break;
+                case 2:
+                    Txt += "2";
+                    break;
+                case 3:
+                    Txt += "3";
+                    break;
+                case 4:
+                    Txt += "4";
+                    break;
+                case 5:
+                    Txt += "5";
+                    break;
+                case 6:
+                    Txt += "6";
+                    break;
+                case 7:
+                    Txt += "7";
+                    break;
+                case 8:
+                    Txt += "8";
+                    break;
+                case 9:
+                    Txt += "9";
+                    break;
+            }
+            return Txt;
+        }
+        public void ButtonClick()
+        {
             if (ButtonIndicate == true | Equally == true)
             {
                 ButtonIndicate = false;
                 Equally = false;
                 textBox1.Clear();
-                textBox1.Text += "0";
+                textBox1.Text += NumberButton();
             }
             else if (textBox1.Text == "0")
             {
-                textBox1.Text += "";
+                textBox1.Text = NumberButton();
             }
             else
             {
-                textBox1.Text += "0";
+                textBox1.Text += NumberButton();
             }
+            WaitInfo = false;
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //кнопка 0
+            count = 0;
+            ButtonClick();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //кнопка 1
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "1";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "1";
-            }
-            else
-            {
-                textBox1.Text += "1";
-            }
+            count = 1;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //кнопка 2
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "2";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "2";
-            }
-            else
-            {
-                textBox1.Text += "2";
-            }
+            count = 2;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //кнопка 3
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "3";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "3";
-            }
-            else
-            {
-                textBox1.Text += "3";
-            }
+            count = 3;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             //кнопка 4
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "4";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "4";
-            }
-            else
-            {
-                textBox1.Text += "4";
-            }
+            count = 4;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             //кнопка 5
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "5";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "5";
-            }
-            else
-            {
-                textBox1.Text += "5";
-            }
+            count = 5;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             //кнопка 6
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "6";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "6";
-            }
-            else
-            {
-                textBox1.Text += "6";
-            }
+            count = 6;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             //кнопка 7
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "7";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "7";
-            }
-            else
-            {
-                textBox1.Text += "7";
-            }
+            count = 7;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             //кнопка 8
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "8";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "8";
-            }
-            else
-            {
-                textBox1.Text += "8";
-            }
+            count = 8;
+            ButtonClick();
+            WaitInfo = false;
         }
 
 
         private void button9_Click(object sender, EventArgs e)
         {
             //кнопка 9
-            if (ButtonIndicate == true | Equally == true)
-            {
-                ButtonIndicate = false;
-                Equally = false;
-                textBox1.Clear();
-                textBox1.Text += "9";
-            }
-            else if (textBox1.Text == "0")
-            {
-                textBox1.Text = "9";
-            }
-            else
-            {
-                textBox1.Text += "9";
-            }
+            count = 9;
+            ButtonClick();
+            WaitInfo = false;
         }
 
         //-------------------------------------операции с числами:
         public void Plus_Minus_Multiply_Division()
         {
+            
             if (Equally == true)
             {
                 b = Convert.ToDouble(textBox1.Text);
@@ -288,11 +229,11 @@ namespace Калькулятор_простой
                 /*if (Plus == true) a += Convert.ToDouble(textBox1.Text);
                 else if (Minus == true) a -= Convert.ToDouble(textBox1.Text);
                 else if (Multiply == true) a *= Convert.ToDouble(textBox1.Text);
-                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);*/
+                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);
                 b = Convert.ToDouble(textBox1.Text);
                 //Hranitel = a;
                 textBox1.Text = a.ToString();
-                a = Convert.ToDouble(textBox1.Text);
+                a = Convert.ToDouble(textBox1.Text);*/
             }            
             else if (a != 0 & b != 0)
             {
@@ -302,6 +243,7 @@ namespace Калькулятор_простой
         private void button11_Click(object sender, EventArgs e)
         {
             //кнопка ПЛЮС:
+            if (WaitInfo == true) WaitInfo = false;
             Plus = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -314,6 +256,7 @@ namespace Калькулятор_простой
         private void button12_Click(object sender, EventArgs e)
         {
             //кнопка МИНУС:
+            WaitInfo = true;
             Minus = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -327,6 +270,7 @@ namespace Калькулятор_простой
         private void button13_Click(object sender, EventArgs e)
         {
             //кнопка УМНОЖИТЬ:
+            WaitInfo = true;
             Multiply = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -339,6 +283,7 @@ namespace Калькулятор_простой
         private void button14_Click(object sender, EventArgs e)
         {
             //кнопка РАЗДЕЛИТЬ:
+            WaitInfo = true;
             Division = true;
             ButtonIndicate = true;
             Plus_Minus_Multiply_Division();
@@ -358,6 +303,7 @@ namespace Калькулятор_простой
 
         public void Calculator()
         {
+
             b = Convert.ToDouble(textBox1.Text);
             textBox1.Clear();
             if (Plus == true) a += b;
