@@ -12,7 +12,7 @@ namespace Калькулятор_простой
 {
     public partial class Form1 : Form
     {
-        double a, b, Hranitel, MemoryDoub;
+        double a, b, MemoryDoub;
         bool Equally = false;
         bool Plus, Minus, Multiply, Division, ButtonIndicate, Percent, TextBOX;
         public Form1()
@@ -44,7 +44,7 @@ namespace Калькулятор_простой
             TextValueZero();
             a = 0;
             b = 0;
-            Hranitel = 0;
+
             AllBoolFalse();
         }
         private void button18_Click(object sender, EventArgs e)
@@ -284,10 +284,11 @@ namespace Калькулятор_простой
             }
             else if (a != 0 & Equally == false)
             {
-                if (Plus == true) a += Convert.ToDouble(textBox1.Text);
+                Calculator();
+                /*if (Plus == true) a += Convert.ToDouble(textBox1.Text);
                 else if (Minus == true) a -= Convert.ToDouble(textBox1.Text);
                 else if (Multiply == true) a *= Convert.ToDouble(textBox1.Text);
-                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);
+                else if (Division == true) a /= Convert.ToDouble(textBox1.Text);*/
                 b = Convert.ToDouble(textBox1.Text);
                 //Hranitel = a;
                 textBox1.Text = a.ToString();
@@ -295,7 +296,7 @@ namespace Калькулятор_простой
             }            
             else if (a != 0 & b != 0)
             {
-                textBox1.Text = Calculator();
+                Calculator();
             }
         }
         private void button11_Click(object sender, EventArgs e)
@@ -351,10 +352,11 @@ namespace Калькулятор_простой
         {
             //кнопка равно:
             //Equally = true;
-            textBox1.Text = Calculator();
+            Calculator();
+            Equally = true;
         }
 
-        public string Calculator()
+        public void Calculator()
         {
             b = Convert.ToDouble(textBox1.Text);
             textBox1.Clear();
@@ -371,9 +373,7 @@ namespace Калькулятор_простой
             //Hranitel = a;
             a = Convert.ToDouble(textBox1.Text);
             b = 0;
-            Hranitel = 0;
-            Equally = true;
-            return a.ToString();
+            textBox1.Text = a.ToString();
         }
 
         //-----------------------------------второстепенные операции:
