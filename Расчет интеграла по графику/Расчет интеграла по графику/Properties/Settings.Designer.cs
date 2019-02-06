@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Моя_программа_Windows_Forms.Properties
+namespace Расчет_интеграла_по_графику.Properties
 {
 
 

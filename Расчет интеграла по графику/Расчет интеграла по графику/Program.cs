@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Моя_программа_Windows_Forms
+namespace Расчет_интеграла_по_графику
 {
     static class Program
     {

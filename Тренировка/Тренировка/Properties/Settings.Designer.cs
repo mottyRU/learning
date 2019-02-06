@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Experience.Properties
+namespace Тренировка.Properties
 {
 
 
