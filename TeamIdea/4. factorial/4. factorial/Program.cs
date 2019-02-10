@@ -23,7 +23,7 @@ namespace _4.factorial
             for (int i = n.Length-1; i > 0; i--)
             {
                 if (Char.GetNumericValue(n[i]) == 0) count++;
-                else if (Char.GetNumericValue(n[i]) != 0) break;
+                else break;
             }
             return count;
         }
