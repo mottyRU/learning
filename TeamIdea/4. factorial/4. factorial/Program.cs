@@ -10,7 +10,7 @@ namespace _4.factorial
     {
         static string factorial(int n)
         {
-            int A = 1;
+            Int64 A = 1;
             for (int i = 1; i <= n; i++)
             {
                 A *= i;
@@ -20,21 +20,16 @@ namespace _4.factorial
         static int ZeroCount(string n)
         {
             int count = 0;
-            for (int i = 0; i < n.Length; )
+            for (int i = n.Length-1; i > 0; i--)
             {
-                if (Char.GetNumericValue(n[i]) == 0)
-                {
-                    count++;
-                    i++;
-                }
-                else i++;
-
+                if (Char.GetNumericValue(n[i]) == 0) count++;
+                else if (Char.GetNumericValue(n[i]) != 0) break;
             }
             return count;
         }
         static void Main(string[] args)
         {
-            Console.Write(ZeroCount(factorial(5)));
+            Console.Write(ZeroCount(factorial(10)));
             Console.ReadKey();
         }
     }
