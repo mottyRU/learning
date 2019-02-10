@@ -22,7 +22,7 @@ namespace _4.factorial
             int count = 0;
             for (int i = 0; i < n.Length; )
             {
-                if (Convert.ToInt32(n[i]) == 0)
+                if (Char.GetNumericValue(n[i]) == 0)
                 {
                     count++;
                     i++;
