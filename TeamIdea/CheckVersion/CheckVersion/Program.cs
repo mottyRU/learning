@@ -13,9 +13,10 @@ namespace CheckVersion
         {
             string Val1 = "";
             string Val2 = "";
-            Regex A = new Regex(@"\d*.\d*.\d*.\d*");
-            Match match1 = Regex.Match(n, @":(.*?)!");
-            Match match2 = Regex.Match(m, @":(.*?)!");
+            string A = @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}";
+            Match match1 = Regex.Match(n, A);
+            Match match2 = Regex.Match(m, A);
+
             if (match1.Success)
             {
                 Val1 = match1.Groups[1].Value;
@@ -35,7 +36,6 @@ namespace CheckVersion
                     Console.WriteLine(Val1 + " is New version");
                     break;
                 }
-                else if (Convert.ToInt32(MassiveVal1[i]) == Convert.ToInt32(MassiveVal2[i])) continue;
                 else if (Convert.ToInt32(MassiveVal1[i]) < Convert.ToInt32(MassiveVal2[i]))
                 {
                     Console.WriteLine(Val2 + " is New version");
