@@ -29,7 +29,7 @@ namespace _4.factorial
         }
         static void Main(string[] args)
         {
-            Console.Write(ZeroCount(factorial(10)));
+            Console.Write(ZeroCount(factorial(5)));
             Console.ReadKey();
         }
     }

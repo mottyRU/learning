@@ -58,7 +58,7 @@ namespace Тренировка
                 //если массивы заполнены, то вызывается метод для построения графика в поле Chart:
                 if (ForX != null & ForY != null)
                 {
-                    BuildGraph(ForX, ForY);
+                    BuildGraph();
                 }
                 this.Controls.Add(lbl);
                 chart1.Cursor = Cursors.UpArrow;
@@ -84,7 +84,7 @@ namespace Тренировка
                 return;
             }
         }
-        public void BuildGraph(double[] n, double[] m)
+        public void BuildGraph()
         {
             chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             for (int i = 0; i <= ForY.Length - 1; i++)
