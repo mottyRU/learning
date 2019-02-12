@@ -13,7 +13,7 @@ namespace CheckVersion
         {
             string Val1 = "";
             string Val2 = "";
-            string A = (@"\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}");
+            string A = @"(\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4})";
             Match match1 = Regex.Match(n, A);
             Match match2 = Regex.Match(m, A);
 
