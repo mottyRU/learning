@@ -9,7 +9,7 @@ namespace CheckVersion
 {
     class Program
     {
-        public void CheckVersion(string n, string m)
+        static void CheckVersion(string n, string m)
         {
             string Val1 = "";
             string Val2 = "";
@@ -46,10 +46,9 @@ namespace CheckVersion
         }
         static void Main(string[] args)
         {
-            string VersionOne = "This is old version of program: 8.1.009.125!";
-            string VersionTwo = "This is old version of program: 8.1.13.41!";
-            Program obj = new Program();
-            obj.CheckVersion(VersionOne, VersionTwo);
+            string VersionOne = "This is old version of program: 8.1.009.125";
+            string VersionTwo = "This is old version of program: 8.1.13.41";
+            CheckVersion(VersionOne, VersionTwo);
             Console.ReadKey();
         }
     }
